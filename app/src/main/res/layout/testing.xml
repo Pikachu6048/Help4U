@@ -6,8 +6,8 @@
     <!--wenz11 changes-->
     <Button
         android:id="@+id/log_out"
-        android:layout_width="386dp"
-        android:layout_height="376dp"
+        android:layout_width="179dp"
+        android:layout_height="139dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
