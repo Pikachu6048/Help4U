@@ -22,4 +22,13 @@
     <string name="career_test">Career Test</string>
     <string name="job_list">Job List</string>
     <string name="log_out">Log Out</string>
+
+    <string name="username">Username</string>
+    <string name="enter_username">Enter username</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_password_again">Enter password again</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="cancel">Cancel</string>
 </resources>
