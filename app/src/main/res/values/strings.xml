@@ -37,11 +37,6 @@
     <string name="cancel">Cancel</string>
     <string name="job_category">Job Category</string>
 
-    <string-array name="Joblist">
-        <item>IT</item>
-        <item>Business</item>
-    </string-array>
-
     <!--fragment_title by wenz11-->
     <string name="welcome_msg">Welcome To Help4U</string>
     <string name="login">Login</string>
@@ -49,5 +44,9 @@
     <string name="help4u_logo">Help4U Logo</string>
     <string name="test">Test</string>
 
+    <string-array name="Joblist">
+        <item>IT</item>
+        <item>Business</item>
+    </string-array>
 
 </resources>
