@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".CareerQuestionnaire"
+            android:label="Career Test Question"
+            android:parentActivityName=".CareerTest">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.CareerTest"/>
+        </activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".TitleScreenActivity" />
         <activity android:name=".Register" />
         <activity
