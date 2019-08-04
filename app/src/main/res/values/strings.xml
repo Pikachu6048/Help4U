@@ -22,4 +22,6 @@
     <string name="career_test">Career Test</string>
     <string name="job_list">Job List</string>
     <string name="log_out">Log Out</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
 </resources>
