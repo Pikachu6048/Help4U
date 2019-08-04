@@ -23,9 +23,7 @@
     <string name="job_list">Job List</string>
     <string name="log_out">Log Out</string>
 
-    <!--by wenz11-->
-    <string name="sign_in">Sign In</string>
-    <string name="sign_out">Sign Out</string>
+
 
     <string name="username">Username</string>
     <string name="enter_username">Enter username</string>
@@ -33,10 +31,15 @@
     <string name="enter_password">Enter password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="enter_password_again">Enter password again</string>
-    <string name="sign_up">Sign Up</string>
     <string name="cancel">Cancel</string>
     <string name="job_category">Job Category</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="take_test">Take a Career Test</string>
+    <string name="test_result">Career Test Result</string>
 
+    <!--by wenz11-->
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
     <!--fragment_title by wenz11-->
     <string name="welcome_msg">Welcome To Help4U</string>
     <string name="login">Login</string>
@@ -48,5 +51,6 @@
         <item>IT</item>
         <item>Business</item>
     </string-array>
+
 
 </resources>
