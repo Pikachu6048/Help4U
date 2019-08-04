@@ -58,13 +58,16 @@ public class MainActivity extends AppCompatActivity
     private Button careerTest;
     private Button JobList;
 
+    // Test btn to other activity by wenz11
+    private Button mActivityTest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         /*Sign in operation by wenz11*/
-        // Set default username is anonymous.
+/*        // Set default username is anonymous.
         mUsername = ANONYMOUS;
 
         // Initialize Firebase Auth
@@ -83,9 +86,9 @@ public class MainActivity extends AppCompatActivity
         }
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                .enableAutoManage(this *//* FragmentActivity *//*, this *//* OnConnectionFailedListener *//*)
                 .addApi(Auth.GOOGLE_SIGN_IN_API)
-                .build();
+                .build();*/
         /*Sign in operation by wenz11*/
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -115,6 +118,21 @@ public class MainActivity extends AppCompatActivity
                 LaunchJobList();
             }
         });
+
+        // Activity Test by wenz11
+        mActivityTest = findViewById(R.id.btnTest);
+        mActivityTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchTitleScreenActivity();
+            }
+        });
+    }
+
+    // Test Title Screen Activity by wenz11
+    private void LaunchTitleScreenActivity() {
+        Intent intent = new Intent(this, TitleScreenActivity.class);
+        startActivity(intent);
     }
 
     private void LaunchJobList() {
