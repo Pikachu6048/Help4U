@@ -23,7 +23,7 @@
     <string name="job_list">Job List</string>
     <string name="log_out">Log Out</string>
 
-    <!--activity_title_screen by wenz11-->
+    <!--by wenz11-->
     <string name="sign_in">Sign In</string>
     <string name="sign_out">Sign Out</string>
 
@@ -35,6 +35,12 @@
     <string name="enter_password_again">Enter password again</string>
     <string name="sign_up">Sign Up</string>
     <string name="cancel">Cancel</string>
+    <string name="job_category">Job Category</string>
+
+    <string-array name="Joblist">
+        <item>IT</item>
+        <item>Business</item>
+    </string-array>
 
     <!--fragment_title by wenz11-->
     <string name="welcome_msg">Welcome To Help4U</string>
