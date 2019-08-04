@@ -35,4 +35,10 @@
     <string name="enter_password_again">Enter password again</string>
     <string name="sign_up">Sign Up</string>
     <string name="cancel">Cancel</string>
+    <string name="job_category">Job Category</string>
+
+    <string-array name="Joblist">
+        <item>IT</item>
+        <item>Business</item>
+    </string-array>
 </resources>
