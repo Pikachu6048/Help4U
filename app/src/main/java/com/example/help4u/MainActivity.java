@@ -124,14 +124,14 @@ public class MainActivity extends AppCompatActivity
         mActivityTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LaunchTitleScreenActivity();
+                LaunchActivityTest();
             }
         });
     }
 
     // Test Title Screen Activity by wenz11
-    private void LaunchTitleScreenActivity() {
-        Intent intent = new Intent(this, TitleScreenActivity.class);
+    private void LaunchActivityTest() {
+        Intent intent = new Intent(this, JobList.class);
         startActivity(intent);
     }
 
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
