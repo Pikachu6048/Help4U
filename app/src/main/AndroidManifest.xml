@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.help4u">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".CareerQuestionnaire"
+            android:label="Career Test Question"
+            android:parentActivityName=".CareerTest">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.CareerTest"/>
+        </activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".TitleScreenActivity" />
         <activity android:name=".Register" />
         <activity
