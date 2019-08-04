@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity
 
     // Test Title Screen Activity by wenz11
     private void LaunchActivityTest() {
-        Intent intent = new Intent(this, JobList.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
