@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--by wenz11-->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -57,6 +60,11 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--must run on material design alpha build 1.1.0-alpha06-->
+    <!--app:icon="@drawable/ic_arrow_forward_black_24dp"-->
+    <!--app:iconGravity="textEnd"-->
+    <!--app:iconPadding="10dp"-->
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton"
         style="@style/Widget.MaterialComponents.Button"
@@ -69,9 +77,6 @@
         android:textAlignment="center"
         android:textColor="@android:color/white"
         app:cornerRadius="20dp"
-        app:icon="@drawable/ic_arrow_forward_black_24dp"
-        app:iconGravity="textEnd"
-        app:iconPadding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/button_cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"

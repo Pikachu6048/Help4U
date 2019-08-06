@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#003B8E</color>
     <color name="colorAccent">#003B8E</color>
 
+
+    <!--by wenz11-->
     <!--darker shade for cancel button ripple effect-->
     <color name="colorCancelRipple">#D14712</color>
+    <!--black background for splash screen-->
+    <color name="colorDarkBackground">#33333D</color>
+
 </resources>
