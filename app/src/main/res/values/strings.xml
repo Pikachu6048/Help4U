@@ -38,16 +38,38 @@
     <string name="test_result">Career Test Result</string>
 
     <!--career questionnaire items by YeuHarn-->
+    <string name="question_label">Question</string>
+    <string name="submit">Submit</string>
+    <string name="please_answer_all_question">Please answer all the questions</string>
+
     <string-array name="questions">
-        <item>abc</item>
-        <item>def</item>
+        <item>aaa</item>
+        <item>aaa</item>
+        <item>aaa</item>
+        <item>aaa</item>
+        <item>aaa</item>
+        <item>bbb</item>
+        <item>bbb</item>
+        <item>bbb</item>
+        <item>bbb</item>
+        <item>bbb</item>
+        <item>ccc</item>
+        <item>ccc</item>
+        <item>ccc</item>
+        <item>ccc</item>
+        <item>ccc</item>
+        <item>ddd</item>
+        <item>ddd</item>
+        <item>ddd</item>
+        <item>ddd</item>
+        <item>ddd</item>
     </string-array>
 
-    <string-array name="answers">
-        <item>interesting</item>
-        <item>very interesting</item>
-    </string-array>
-    
+    <string name="very_interested">Very Interested</string>
+    <string name="interested">Interested</string>
+    <string name="slightly_interested">Slightly Interested</string>
+    <string name="not_interested">Not Interested</string>
+
     <!--by wenz11-->
     <string name="sign_in">Sign In</string>
     <string name="sign_out">Sign Out</string>
@@ -60,10 +82,10 @@
     <string name="test">Test</string>
     <string name="logout">Logout</string>
 
+
     <string-array name="Joblist">
         <item>IT</item>
         <item>Business</item>
     </string-array>
-
 
 </resources>
