@@ -23,6 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.core.view.Change;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -65,7 +66,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
 
         /*splash screen by wenz11*/
-        setTheme(R.style.AppTheme_NoActionBar);
+        /*Change this activity's manifest to AppTheme.Splash
+        Temporary disable it for designing purposes   */
+//        setTheme(R.style.AppTheme_NoActionBar);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

@@ -58,6 +58,7 @@
     <string name="next">Next</string>
     <string name="help4u_logo">Help4U Logo</string>
     <string name="test">Test</string>
+    <string name="logout">Logout</string>
 
     <string-array name="Joblist">
         <item>IT</item>

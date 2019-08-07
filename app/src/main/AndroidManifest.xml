@@ -41,7 +41,9 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.Splash">
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--change to AppTheme.Splash for the splash screen to works-->
+            <!--temporary comment out for designing purpose-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
