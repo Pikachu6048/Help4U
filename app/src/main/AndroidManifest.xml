@@ -11,7 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CareerTestResult"></activity>
+
+        <activity android:name=".CareerTestResult"
+            android:label="Career Test Result"
+            android:parentActivityName=".CareerTest">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.CareerTest"/>
+        </activity>
+
         <activity
             android:name=".CareerQuestionnaire"
             android:label="Career Test Question"
@@ -20,9 +28,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.CareerTest" />
         </activity>
+
         <activity android:name=".LoginActivity" />
         <activity android:name=".TitleScreenActivity" />
         <activity android:name=".Register" />
+
         <activity
             android:name=".JobList"
             android:label="Job List"
@@ -31,6 +41,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.MainActivity" />
         </activity>
+
         <activity
             android:name=".CareerTest"
             android:label="Career Test"
@@ -39,6 +50,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.CareerTest" />
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
