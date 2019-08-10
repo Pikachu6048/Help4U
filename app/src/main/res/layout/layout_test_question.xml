@@ -24,7 +24,7 @@
         android:layout_marginTop="14dp"
         android:text=""
         android:textColor="@android:color/black"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <RadioGroup
         android:id="@+id/radioGroup_answer"

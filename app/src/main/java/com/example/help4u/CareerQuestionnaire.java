@@ -3,6 +3,7 @@ package com.example.help4u;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,9 @@ import java.util.ArrayList;
 
 /*
  * Created by YeuHarn
+ * An activity to display career test question in fragments
+ * related classes: CareerQuestionnaire, QuestionFragment, QuestionStatePagerAdapter, TestQuestionAdapter
+ * related layouts: activity_career_questionnaire, fragment_question, layout_test_question(layout template for one test question)
  * */
 
 public class CareerQuestionnaire extends AppCompatActivity {
@@ -25,6 +29,7 @@ public class CareerQuestionnaire extends AppCompatActivity {
     private ViewPager mViewPager; //fragment container
     private Button mNextButton; //to let user navigate to next page question
 
+    private static final int TOTAL_QUESTIONS = 20; //total number of test questions
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +38,7 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
         //initialize selectedAnswer
         selectedAnswer = new ArrayList<>();
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < TOTAL_QUESTIONS; i++)
             selectedAnswer.add(-1); //questions that haven't answer will be -1
 
         currentPageNumber = 0;
@@ -59,14 +64,12 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
                 //check if all question answered in current page, before moving to next page
                 //if user is in last page
-                if(mNextButton.getText().equals( "Submit" )){
-                    //go to result activity
-                    Toast.makeText( getApplicationContext(), "Go to result", Toast.LENGTH_SHORT ).show();
+                if(mNextButton.getText().equals( "Submit" ) && answeredQues == TOTAL_QUESTIONS){
+                    launchTestResult(); //go to career test result activity
                 }
                 //if user already answered all questions in the page
                 else if(answeredQues == ((currentPageNumber + 1) * 5)){
-                    //go to next page
-                    mViewPager.setCurrentItem( ++currentPageNumber, true );
+                    mViewPager.setCurrentItem( ++currentPageNumber, true ); //go to next page
 
                     mProgressBar.setProgress( mProgressBar.getProgress() + 25 ); //increase progress bar
 
@@ -79,12 +82,11 @@ public class CareerQuestionnaire extends AppCompatActivity {
                 else{
                     Toast.makeText( getApplicationContext(), getResources().getString( R.string.please_answer_all_question), Toast.LENGTH_SHORT ).show();
                 }
-
-
             }
         } );
     }
 
+    //to create fragments for test questions, 1 fragment(page) 5 test questions, total 4 fragments
     private void setupViewPager(ViewPager viewPager){
         String[] testQuestions = getResources().getStringArray( R.array.questions );
         mPagerAdapter.addFragment( QuestionFragment.newInstance( testQuestions, 0 ) );
@@ -93,5 +95,10 @@ public class CareerQuestionnaire extends AppCompatActivity {
         mPagerAdapter.addFragment( QuestionFragment.newInstance( testQuestions, 3 ) );
 
         viewPager.setAdapter( mPagerAdapter );
+    }
+
+    private void launchTestResult(){
+        Intent intent = new Intent( this, CareerTestResult.class );
+        startActivity( intent );
     }
 }
