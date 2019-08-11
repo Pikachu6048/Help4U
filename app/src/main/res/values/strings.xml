@@ -44,6 +44,8 @@
     <string name="question_label">Question</string>
     <string name="submit">Submit</string>
     <string name="please_answer_all_question">Please answer all the questions</string>
+    <string name="test_result_not_available">Test Result not available</string>
+    <string name="recommended_job_not_available">Recommended Job not available</string>
 
     <string-array name="questions">
         <item>aaa</item>

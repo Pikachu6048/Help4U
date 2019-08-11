@@ -1,7 +1,6 @@
 package com.example.help4u;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,11 +73,7 @@ public class TestQuestionAdapter extends BaseAdapter {
         rg.setOnCheckedChangeListener( new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int selectedIndex) {
-                RadioButton rb = v.findViewById( selectedIndex );
-
                 CareerQuestionnaire.selectedAnswer.set(questionIndex, selectedIndex);
-
-                Log.d("OnCheckedListener", "selected == " + rb.getText());
             }
         } );
 

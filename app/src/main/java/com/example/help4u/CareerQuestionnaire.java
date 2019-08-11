@@ -29,7 +29,8 @@ public class CareerQuestionnaire extends AppCompatActivity {
     private ViewPager mViewPager; //fragment container
     private Button mNextButton; //to let user navigate to next page question
 
-    private static final int TOTAL_QUESTIONS = 20; //total number of test questions
+    public static final int TOTAL_QUESTIONS = 20; //total number of test questions
+    public static final int DEFAULT_ANSWER = -1; //default value for questions that have not been answered yet
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class CareerQuestionnaire extends AppCompatActivity {
         //initialize selectedAnswer
         selectedAnswer = new ArrayList<>();
         for(int i = 0; i < TOTAL_QUESTIONS; i++)
-            selectedAnswer.add(-1); //questions that haven't answer will be -1
+            selectedAnswer.add(DEFAULT_ANSWER); //questions that haven't answer will be -1
 
         currentPageNumber = 0;
 
@@ -58,7 +59,7 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
                 int answeredQues = 0; //to keep track the number of answered questions
                 for(int i = 0; i < selectedAnswer.size(); i++){
-                    if(selectedAnswer.get(i) != -1)
+                    if(selectedAnswer.get(i) != DEFAULT_ANSWER)
                         answeredQues++;
                 }
 
@@ -99,6 +100,10 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
     private void launchTestResult(){
         Intent intent = new Intent( this, CareerTestResult.class );
+
+        //to indicate user is directly navigate to Test Result page from Career Test main page
+        intent.putExtra( CareerTestResult.PREVIOUS_ACTIVITY, "CareerQuestionnaire" );
+
         startActivity( intent );
     }
 }
