@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by YeuHarn
+    used to store career test question related values
+-->
+<resources>
+
+    <!-- career test questions -->
+    <string-array name="questions">
+        <item>Learn how to invest money</item>
+        <item>Write a business plan</item>
+        <item>Learn statistics and accounting</item>
+        <item>Learn a trade</item>
+        <item>Solve math problems</item>
+
+        <item>Use math, science, and technology</item>
+        <item>Work with numbers often</item>
+        <item>Help with business operation</item>
+        <item>Promote or market a brand new product</item>
+        <item>Innovate and design better products</item>
+
+        <item>Start or run a business</item>
+        <item>Motivate others to meet their goals</item>
+        <item>Learn the legal system</item>
+        <item>Troubleshoot technology issues</item>
+        <item>Keep up with cutting edge technology</item>
+
+        <item>Use computer software to design art</item>
+        <item>Design the look and feel of a website</item>
+        <item>Evaluate products and redesign them to be better</item>
+        <item>Learn computer software programs</item>
+        <item>Code an app or website</item>
+    </string-array>
+
+    <!-- test answer options -->
+    <string name="very_interested">Very Interested</string>
+    <string name="interested">Interested</string>
+    <string name="slightly_interested">Slightly Interested</string>
+    <string name="not_interested">Not Interested</string>
+
+    <!-- answer scores for each job, when user answered "Interested" on that question -->
+    <integer-array name="score_programmer">
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+
+        <item>3</item>
+        <item>3</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>5</item>
+        <item>5</item>
+    </integer-array>
+
+    <integer-array name="score_dataScientist">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>4</item>
+        <item>5</item>
+
+        <item>5</item>
+        <item>5</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>3</item>
+        <item>2</item>
+
+        <item>2</item>
+        <item>3</item>
+        <item>2</item>
+        <item>3</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="score_accountant">
+        <item>4</item>
+        <item>3</item>
+        <item>5</item>
+        <item>4</item>
+        <item>5</item>
+
+        <item>5</item>
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>3</item>
+
+        <item>3</item>
+        <item>3</item>
+        <item>5</item>
+        <item>4</item>
+        <item>2</item>
+
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+    </integer-array>
+
+    <integer-array name="score_entrepreneur">
+        <item>2</item>
+        <item>5</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>5</item>
+
+        <item>5</item>
+        <item>5</item>
+        <item>2</item>
+        <item>3</item>
+        <item>3</item>
+
+        <item>3</item>
+        <item>3</item>
+        <item>5</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+</resources>

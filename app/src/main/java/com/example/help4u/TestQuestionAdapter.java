@@ -47,26 +47,26 @@ public class TestQuestionAdapter extends BaseAdapter {
         TextView question = (TextView)v.findViewById( R.id.textView_question );
         RadioGroup rg = (RadioGroup)v.findViewById( R.id.radioGroup_answer );
 
-        RadioButton ans1 = v.findViewById( R.id.radioButton_answer1 );
-        RadioButton ans2 = v.findViewById( R.id.radioButton_answer2 );
-        RadioButton ans3 = v.findViewById( R.id.radioButton_answer3 );
-        RadioButton ans4 = v.findViewById( R.id.radioButton_answer4 );
+        RadioButton veryInterested = v.findViewById( R.id.radioButton_answer_vi );
+        RadioButton interested = v.findViewById( R.id.radioButton_answer_in );
+        RadioButton slightlyInterested = v.findViewById( R.id.radioButton_answer_si );
+        RadioButton notInterested = v.findViewById( R.id.radioButton_answer_ni );
 
         final int questionIndex = pageNumber * 5 + i; //index of the test questions, 5 questions per page, start from 0
 
         //to remain the selected answer in the radio group after user scroll over the question
         switch(CareerQuestionnaire.selectedAnswer.get(questionIndex)){
-            case R.id.radioButton_answer1:
-                ans1.setChecked(true);
+            case R.id.radioButton_answer_vi:
+                veryInterested.setChecked(true);
                 break;
-            case R.id.radioButton_answer2:
-                ans2.setChecked(true);
+            case R.id.radioButton_answer_in:
+                interested.setChecked(true);
                 break;
-            case R.id.radioButton_answer3:
-                ans3.setChecked(true);
+            case R.id.radioButton_answer_si:
+                slightlyInterested.setChecked(true);
                 break;
-            case R.id.radioButton_answer4:
-                ans4.setChecked(true);
+            case R.id.radioButton_answer_ni:
+                notInterested.setChecked(true);
         }
 
         //add a listener to record user's answer

@@ -40,40 +40,48 @@
     <string name="more_job">More Job</string>
     <string name="recommended_job">Recommended Job</string>
 
-    <!--career questionnaire items by YeuHarn-->
+    <!-- career questionnaire items by YeuHarn -->
     <string name="question_label">Question</string>
     <string name="submit">Submit</string>
     <string name="please_answer_all_question">Please answer all the questions</string>
     <string name="test_result_not_available">Test Result not available</string>
     <string name="recommended_job_not_available">Recommended Job not available</string>
+    <string name="IT_label">Information\nTechnology</string>
+    <string name="business_label">Finance and\nBusiness</string>
 
-    <string-array name="questions">
-        <item>aaa</item>
-        <item>aaa</item>
-        <item>aaa</item>
-        <item>aaa</item>
-        <item>aaa</item>
-        <item>bbb</item>
-        <item>bbb</item>
-        <item>bbb</item>
-        <item>bbb</item>
-        <item>bbb</item>
-        <item>ccc</item>
-        <item>ccc</item>
-        <item>ccc</item>
-        <item>ccc</item>
-        <item>ccc</item>
-        <item>ddd</item>
-        <item>ddd</item>
-        <item>ddd</item>
-        <item>ddd</item>
-        <item>ddd</item>
+    <!-- job titles and descriptions for recommended job by YeuHarn-->
+    <string-array name="job_title">
+        <item>Programmer, Software manager</item>
+        <item>Data scientist</item>
+        <item>Accountant</item>
+        <item>Entrepreneur</item>
     </string-array>
 
-    <string name="very_interested">Very Interested</string>
-    <string name="interested">Interested</string>
-    <string name="slightly_interested">Slightly Interested</string>
-    <string name="not_interested">Not Interested</string>
+    <string-array name="job_desc">
+        <item>
+            A programmer creates the code for software applications.
+            After a software developer designs a computer program, the programmer writes code based on the design.\n
+            Software managers are responsible for overseeing and coordinating the people,
+            resources and processes required to deliver new software or upgrade existing products.
+        </item>
+        <item>
+            A data scientist is someone who makes value out of data.
+            Such a person proactively fetches information from various sources and analyze it for
+            better understanding about how the business performs,
+            and to build AI tools that automate certain processes within the company.
+        </item>
+        <item>
+            An accountant is a practitioner of accounting or accountancy, which is the measurement,
+            disclosure or provision of assurance about financial information that helps managers,
+            investors, tax authorities and others make decisions about allocating resources.
+        </item>
+        <item>
+            Talking about an entrepreneur, means talking about a person with great,
+            innovating ideas that identifies the need for the creation of a business to feel a void.
+            Entrepreneurs can be people of all ages. Their characteristics are creativity,
+            imagination and a thirst for work.
+        </item>
+    </string-array>
 
     <!--by wenz11-->
     <string name="sign_in">Sign In</string>
