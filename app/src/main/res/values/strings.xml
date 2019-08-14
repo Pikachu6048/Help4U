@@ -94,10 +94,18 @@
     <string name="help4u_logo">Help4U Logo</string>
     <string name="test">Test</string>
     <string name="logout">Logout</string>
+    <string name="job">test</string>
+    <string name="jobSmallDesc">test2</string>
+    <string name="fullDesc">test1</string>
+    <string name="smallDesc">test</string>
+    <string name="set_reminder">Set Reminder</string>
+    <string name="navigation">Navigate to the destination</string>
+    <string name="compName">Company Name</string>
 
     <string-array name="Joblist">
         <item>IT</item>
         <item>Business</item>
     </string-array>
+    <string name="title_activity_navigation">Map</string>
 
 </resources>
