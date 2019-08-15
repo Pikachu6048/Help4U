@@ -103,8 +103,11 @@
     <string name="compName">Company Name</string>
 
     <string-array name="Joblist">
-        <item>IT</item>
-        <item>Business</item>
+        <item>Default</item>
+        <item>Programmer</item>
+        <item>Software Manager</item>
+        <item>Accountant</item>
+        <item>Data Scientist</item>
     </string-array>
     <string name="title_activity_navigation">Map</string>
     <string name="job_description">Job Description</string>

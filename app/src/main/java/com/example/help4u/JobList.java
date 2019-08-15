@@ -15,11 +15,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 public class JobList extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ListView jobListView;
     private TextView jobCategory;
     private Spinner  job_category_list;
+    String job_cate = "Default";
 
     String[] jobName = {"Accountant","Accountant","Programmer","Software Manager","Data Scientist","Company 6"
     ,"Company 7", "Company 8"};
@@ -75,6 +78,8 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
         jobCategoryList.setAdapter(adapter);
         jobCategoryList.setOnItemSelectedListener(this);
 
+
+
         jobListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -91,9 +96,12 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
 
     }
 
+
+
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
+        String job_category = parent.getItemAtPosition(position).toString();
 
     }
 
@@ -103,38 +111,38 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
     }
 
 
-    private class CustomAdapter extends BaseAdapter {
+        private class CustomAdapter extends BaseAdapter {
 
 
-        @Override
-        public int getCount() {
-            return jobName.length;
-        }
+            @Override
+            public int getCount() {
+                return jobName.length;
+            }
 
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
+            @Override
+            public Object getItem(int position) {
+                return null;
+            }
 
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
+            @Override
+            public long getItemId(int position) {
+                return 0;
+            }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View view1 = getLayoutInflater().inflate(R.layout.job_row_data,null);
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view1 = getLayoutInflater().inflate(R.layout.job_row_data, null);
 
 
-            TextView name = view1.findViewById(R.id.companyName);
-            TextView name2 = view1.findViewById(R.id.jobSmallDescription);
-            ImageView image = view1.findViewById(R.id.compLogo);
-            name.setText(jobName[position]);
-            name2.setText(jobDesc[position]);
-            image.setImageResource(compLogo[position]);
+                TextView name = view1.findViewById(R.id.companyName);
+                TextView name2 = view1.findViewById(R.id.jobSmallDescription);
+                ImageView image = view1.findViewById(R.id.compLogo);
+                name.setText(jobName[position]);
+                name2.setText(jobDesc[position]);
+                image.setImageResource(compLogo[position]);
 
-            return view1;
+                return view1;
+            }
         }
     }
 
-}
