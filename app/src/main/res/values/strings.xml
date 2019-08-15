@@ -112,5 +112,8 @@
     <string name="salaryAmount">RM 1000</string>
     <string name="companyAddress">Company Address</string>
     <string name="address">Address</string>
+    <string name="about_us_full">A social/community mobile application developed by Ang Zuan Wen, Lim Yeu Harn, and Chong Jia Yi.
+        This application is to solve  1 of the united nations’ sustainable development goals (which is unemployment).
+        The goal of the application is to help user able to find their suitable work environment and occupations.</string>
 
 </resources>
