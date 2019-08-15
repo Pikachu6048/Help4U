@@ -99,7 +99,7 @@
     <string name="fullDesc">test1</string>
     <string name="smallDesc">test</string>
     <string name="set_reminder">Set Reminder</string>
-    <string name="navigation">Navigate to the destination</string>
+    <string name="navigation">direction</string>
     <string name="compName">Company Name</string>
 
     <string-array name="Joblist">
@@ -107,5 +107,10 @@
         <item>Business</item>
     </string-array>
     <string name="title_activity_navigation">Map</string>
+    <string name="job_description">Job Description</string>
+    <string name="salary">Salary:</string>
+    <string name="salaryAmount">RM 1000</string>
+    <string name="companyAddress">Company Address</string>
+    <string name="address">Address</string>
 
 </resources>

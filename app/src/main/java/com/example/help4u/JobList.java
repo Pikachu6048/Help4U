@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,13 +21,40 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
     private TextView jobCategory;
     private Spinner  job_category_list;
 
-    String[] compName = {"Company 1","Company 2","Company 3","Company 4","Company 5"};
-    String[] compDesc = {"Company 1 desc","Company 2 desc","Company 3 desc","Company 4 desc","Company 5 desc"};
-    String[] compFullDesc ={"Company 1 full desc","Company 2 full desc","Company 3 full desc",
-            "Company 4 full desc","Company 5 full desc"};
-    String[] compLat = { "3.158424","3.158424","3.158424","3.158424","3.158424"};
-    String[] compLong = {"101.752893","101.752893","101.752893","101.752893","101.752893"};
+    String[] jobName = {"Accountant","Accountant","Programmer","Software Manager","Data Scientist","Company 6"
+    ,"Company 7", "Company 8"};
 
+    String[] jobDesc = {"Ambition Group Malaysia Sdn Bhd","Vitality Boost Sdn Bhd","MULTI EPSILON SOLUTIONS SDN BHD",
+            "SEEK ASIA","RGF Executive Search Malaysia Sdn Bhd",
+            "Company 6 desc","Company 7 desc","Company 8 desc",};
+
+
+    String[] jobFullDesc ={"Ensure accurate and timely preparation of management and financial reports in compliance with approved accounting standard.",
+            "Ensure accurate and timely submission of regulatory requirements including SST, Withholding Tax and Income Tax.",
+            "You be responsible in designing, build and maintain efficient, reusable and reliable code.\n " +
+                    "Have knowledge in C#, ASP.net, MS SQL, HTML, JS skills would be great.",
+            " You will maintain a strong collaborative relationship with the Product Manager who shares the responsibility of balancing platform health and product growth.",
+            "the Data Scientist will be responsible for all analysis across multiple markets in building predicative models and subsequently putting models into production. Working hand in hand with the cybersecurity team, the Data Scientist will work on enhancing the business",
+            "Company 6 full desc",
+            "Company 7 full desc",
+            "Company 8 full desc"};
+
+    String [] jobSalary = {"RM3000-3500","RM3000","RM3000-3500","RM3500-7000","RM10000-15000","RM4000","RM3000-3500"};
+
+    String[] compAddress ={"Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
+    "Jalan Desa, Taman Desa, 58100 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+            "48 Jalan 11/146, Bandar Tasik Selatan, Sg. Besi 57000 Kuala Lumpur",
+    "20, Menara AIA Cap Square No. 10, Jalan Munshi Abdullah 50100 Kuala Lumpur",
+    "The Gardens South Tower, Mid Valley City, Lingkaran Syed Putra, 59200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+    "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
+    "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
+    "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",};
+
+
+
+
+     int[] compLogo ={R.drawable.ambition_logo,R.drawable.boost_logo,R.drawable.multi_logo,
+        R.drawable.seek_asia,R.drawable.rgf_logo,R.drawable.ambition_logo,R.drawable.ambition_logo,R.drawable.ambition_logo};
 
 
     @Override
@@ -51,11 +79,12 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(),JobDetails.class);
-                intent.putExtra("compName",compName[position]);
-                intent.putExtra("compDesc",compDesc[position]);
-                intent.putExtra("compFullDesc",compFullDesc[position]);
-                intent.putExtra("compLat",compLat[position]);
-                intent.putExtra("compLong",compLong[position]);
+                intent.putExtra("jobName",jobName[position]);
+                intent.putExtra("jobDesc",jobDesc[position]);
+                intent.putExtra("jobFullDesc",jobFullDesc[position]);
+                intent.putExtra("comp_Logo",compLogo[position]);
+                intent.putExtra("salary",jobSalary[position]);
+                intent.putExtra("comp_Address",compAddress[position]);
                 startActivity(intent);
             }
         });
@@ -79,7 +108,7 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
 
         @Override
         public int getCount() {
-            return compName.length;
+            return jobName.length;
         }
 
         @Override
@@ -99,9 +128,10 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
 
             TextView name = view1.findViewById(R.id.companyName);
             TextView name2 = view1.findViewById(R.id.jobSmallDescription);
-
-            name.setText(compName[position]);
-            name2.setText(compDesc[position]);
+            ImageView image = view1.findViewById(R.id.compLogo);
+            name.setText(jobName[position]);
+            name2.setText(jobDesc[position]);
+            image.setImageResource(compLogo[position]);
 
             return view1;
         }

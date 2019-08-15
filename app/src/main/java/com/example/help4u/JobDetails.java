@@ -3,37 +3,48 @@ package com.example.help4u;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class JobDetails extends AppCompatActivity {
-    TextView compName;
-    TextView compSmallDesc;
-    TextView compFullDesc;
+    TextView jobName;
+    TextView jobSmallDesc;
+    TextView jobFullDesc;
+    TextView jobSalary;
+    ImageView compLogo;
+    TextView compAddress;
 
     String companyName;
-    String compLat;
-    String compLong;
+    String companyAddress;
+
     private Button mNavigation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
 
-        compName = findViewById(R.id.companyName);
-        compSmallDesc = findViewById(R.id.companySmallDescription);
-        compFullDesc = findViewById(R.id.companyFullDescription);
+        jobName = findViewById(R.id.companyName);
+        jobSmallDesc = findViewById(R.id.companySmallDescription);
+        jobFullDesc = findViewById(R.id.companyFullDescription);
+        jobSalary = findViewById(R.id.job_salary);
+        compLogo = findViewById(R.id.comp_logo);
+        compAddress = findViewById(R.id.comp_address);
 
         Intent intent = getIntent();
 
-        compName.setText(intent.getStringExtra("compName"));
-        compSmallDesc.setText(intent.getStringExtra("compDesc"));
-        compFullDesc.setText(intent.getStringExtra("compFullDesc"));
+        jobName.setText(intent.getStringExtra("jobName"));
+        jobSmallDesc.setText(intent.getStringExtra("jobDesc"));
+        jobFullDesc.setText(intent.getStringExtra("jobFullDesc"));
+        compLogo.setImageResource(intent.getIntExtra("comp_Logo",0));
+        jobSalary.setText(intent.getStringExtra("salary"));
+        compAddress.setText(intent.getStringExtra("comp_Address"));
         companyName= (intent.getStringExtra("compName"));
-        compLat = (intent.getStringExtra("compLat"));
-        compLong = (intent.getStringExtra("compLong"));
+        companyAddress= (intent.getStringExtra("comp_Address"));
         mNavigation = findViewById(R.id.btn_navigation);
         mNavigation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,11 +56,10 @@ public class JobDetails extends AppCompatActivity {
 
     private void LaunchNavigation() {
 
-        Intent intent = new Intent(this, Navigation.class);
-        intent.putExtra("compName", companyName);
-        intent.putExtra("compLat",compLat);
-        intent.putExtra("compLong",compLong);
-        startActivity(intent);
+        Uri getAddress = Uri.parse("geo:0,0?q=" + companyAddress );
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, getAddress);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
 
     }
 }
