@@ -49,6 +49,7 @@
             android:max="100"
             android:progress="0"
             android:progressTint="@android:color/holo_purple"
+            android:scaleY="2"
             app:layout_constraintEnd_toStartOf="@+id/textView_IT_percentage"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView_IT_label"
@@ -91,6 +92,7 @@
             android:max="100"
             android:progress="0"
             android:progressTint="@android:color/holo_orange_dark"
+            android:scaleY="2"
             app:layout_constraintEnd_toStartOf="@+id/textView_Business_percentage"
             app:layout_constraintStart_toEndOf="@+id/textView_Business_label"
             app:layout_constraintTop_toBottomOf="@+id/progressBar_IT" />

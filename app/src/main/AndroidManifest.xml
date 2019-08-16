@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AboutUs"
+
+        <activity
+            android:name=".AboutUs"
             android:label="About Us"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -31,6 +33,36 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.JobList" />
+        </activity>
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".TitleScreenActivity" />
+        <activity android:name=".Register" />
+
+        <activity
+            android:name=".JobList"
+            android:label="Job List"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".CareerTest"
+            android:label="Career Test"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.CareerTest" />
+        </activity>
+        <activity
+            android:name=".Qualification"
+            android:label="Qualification"
+            android:parentActivityName=".CareerTest">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.CareerTest"/>
         </activity>
         <activity
             android:name=".CareerTestResult"
@@ -48,25 +80,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.CareerTest" />
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".TitleScreenActivity" />
-        <activity android:name=".Register" />
-        <activity
-            android:name=".JobList"
-            android:label="Job List"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.help4u.MainActivity" />
-        </activity>
-        <activity
-            android:name=".CareerTest"
-            android:label="Career Test"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.help4u.CareerTest" />
-        </activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

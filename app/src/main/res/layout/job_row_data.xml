@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/jobListViewData"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
->
+    android:padding="10dp" >
 
-    <RelativeLayout
-        android:id="@+id/jobListViewData"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
->
+    <TextView
+        android:id="@+id/companyName"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:text="@string/job"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/jobSmallDescription"
+        android:layout_width="249dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/companyName"
+        android:layout_alignEnd="@+id/companyName"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="-10dp"
+        android:text="@string/jobSmallDesc" />
 
-        <TextView
-            android:id="@+id/companyName"
-            android:layout_width="239dp"
-            android:layout_height="wrap_content"
-            android:text="@string/job"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/compLogo"
+        android:layout_width="83dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_toEndOf="@+id/companyName"
+        app:srcCompat="@drawable/common_full_open_on_phone" />
 
-        <TextView
-            android:id="@+id/jobSmallDescription"
-            android:layout_width="249dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/companyName"
-            android:layout_alignEnd="@+id/companyName"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="-10dp"
-            android:text="@string/jobSmallDesc" />
-
-        <ImageView
-            android:id="@+id/compLogo"
-            android:layout_width="83dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_toEndOf="@+id/companyName"
-            app:srcCompat="@drawable/common_full_open_on_phone" />
-
-
-    </RelativeLayout>
 </RelativeLayout>

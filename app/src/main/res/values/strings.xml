@@ -35,8 +35,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="take_test">Take a Career Test</string>
     <string name="test_result">Career Test Result</string>
-
-    <!-- career test result activity by YeuHarn -->
+    <string name="information_technology">Information Technology</string>
+    <string name="finance_and_business">Finance and Business</string>
+    <string name="choose_qualification">Please choose your qualification</string>
     <string name="more_job">More Job</string>
     <string name="recommended_job">Recommended Job</string>
 
@@ -83,6 +84,7 @@
         </item>
     </string-array>
 
+
     <!--by wenz11-->
     <string name="sign_in">Sign In</string>
     <string name="sign_out">Sign Out</string>
@@ -118,5 +120,6 @@
     <string name="about_us_full">A social/community mobile application developed by Ang Zuan Wen, Lim Yeu Harn, and Chong Jia Yi.
         This application is to solve  1 of the united nations’ sustainable development goals (which is unemployment).
         The goal of the application is to help user able to find their suitable work environment and occupations.</string>
+
 
 </resources>
