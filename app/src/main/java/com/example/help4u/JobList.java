@@ -42,7 +42,7 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
             "Company 7 full desc",
             "Company 8 full desc"};
 
-    String [] jobSalary = {"RM3000-3500","RM3000","RM3000-3500","RM3500-7000","RM10000-15000","RM4000","RM3000-3500"};
+    String [] jobSalary = {"RM3000-3500","RM3000","RM3000-3500","RM3500-7000","RM10000-15000","RM4000","RM3000-3500","RM9000"};
 
     String[] compAddress ={"Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
     "Jalan Desa, Taman Desa, 58100 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
@@ -52,6 +52,11 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
     "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
     "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
     "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",};
+
+    String[] compEmail = {"karyen.wong@ambition.com.my"," enquiries@oaic.gov.au"," info@multisoft.com.my",
+            "smacartney@seek.com.au","nazmina.khan@rgf-executive.com","karyen.wong@ambition.com.my"
+    ,"karyen.wong@ambition.com.my","karyen.wong@ambition.com.my"};
+
 
 
 
@@ -90,6 +95,7 @@ public class JobList extends AppCompatActivity implements AdapterView.OnItemSele
                 intent.putExtra("comp_Logo",compLogo[position]);
                 intent.putExtra("salary",jobSalary[position]);
                 intent.putExtra("comp_Address",compAddress[position]);
+                intent.putExtra("compEmail",compEmail[position]);
                 startActivity(intent);
             }
         });
