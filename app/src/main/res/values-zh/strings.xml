@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="IT_label">资讯\n科技</string>
+    <string name="about_us_full">这是一个由 Ang Zuan Wen, Lim Yeu Harn 和 Chong Jia Yi 所开发的移动应用程式。开发宗旨是为了解决联合国的可持续发展目标之一（失业）。这个程序的目的是为了帮助用户找到适合的工作环境与职业。</string>
+    <string name="action_settings">设置</string>
+    <string name="address">地址</string>
+    <string name="apply_for_job">查询此工作的详情信息</string>
+    <string name="business_label">金融与\n商业</string>
+    <string name="cancel">取消</string>
+    <string name="choose_qualification">请选择您的学历</string>
+    <string name="clear_test_result">清除测试结果</string>
+    <string name="clear_test_result_message">确定要清除测试结果？</string>
+    <string name="compName">公司名字</string>
+    <string name="companyAddress">公司地址</string>
+    <string name="company_email">公司电邮</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="enter_password">输入密码</string>
+    <string name="enter_password_again">再次输入密码</string>
+    <string name="enter_username">输入用户名</string>
+    <string name="finance_and_business">金融与商业</string>
+    <string name="google_sign_in">谷歌登录</string>
+    <string name="google_sign_up">谷歌注册</string>
+    <string name="information_technology">资讯科技</string>
+    <string name="interested">感兴趣</string>
+    <string name="job_category">工作类别</string>
+    <string name="job_description">工作说明</string>
+    <string name="job_list">工作列表</string>
+    <string name="menu_about_us">关于</string>
+    <string name="menu_career_test">职业测试</string>
+    <string name="menu_home">首页</string>
+    <string name="menu_profile">个人档案</string>
+    <string name="menu_send">发送</string>
+    <string name="more_job">更多工作</string>
+    <string name="navigation">地图</string>
+    <string name="navigation_drawer_close">关闭导航栏</string>
+    <string name="navigation_drawer_open">打开导航栏</string>
+    <string name="next">下一页</string>
+    <string name="no">否</string>
+    <string name="not_interested">不感兴趣</string>
+    <string name="password">密码</string>
+    <string name="please_answer_all_question">请回答所有问题</string>
+    <string name="question_label">问题</string>
+    <string name="recommended_job">推荐职业</string>
+    <string name="recommended_job_not_available">无推荐职业</string>
+    <string name="salary">薪金</string>
+    <string name="set_reminder">设置提醒</string>
+    <string name="sign_in">登录</string>
+    <string name="sign_out">登出</string>
+    <string name="sign_up">注册</string>
+    <string name="slightly_interested">稍微感兴趣</string>
+    <string name="submit">提交</string>
+    <string name="take_test">开始职业测试</string>
+    <string name="test_result">职业测试结果</string>
+    <string name="test_result_not_available">无职业测试结果</string>
+    <string name="title_activity_navigation">地图</string>
+    <string name="username">用户名</string>
+    <string name="very_interested">非常感兴趣</string>
+    <string name="welcome_msg">欢迎使用 Help4U</string>
+    <string name="yes">是</string>
+    <string name="menu_wishList">心愿单</string>
+    <string name="menu_tools">工具</string>
+    <string name="menu_jobList">工作列表</string>
+    <string name="login">登录</string>
+    <string name="logout">登出</string>
+    <string name="test_result_cleared">测试结果已清除</string>
+    <string name="career_test_question">职业测试问题</string>
+    <string name="job_detail">工作详情</string>
+    <string name="qualification">学历</string>
+
+    <string-array name="job_title">
+        <item>程序员，软件经理</item>
+        <item>数据科学家</item>
+        <item>会计师</item>
+        <item>企业家</item>
+    </string-array>
+
+    <string-array name="job_desc">
+        <item>
+            程序员为软件应用程序编写程式码。在软件开发人员设计好程序蓝图之后，程序员根据设计编写程式码。\n
+            软件经理则为开发新软件或升级现有软件，负责监督和调动人力和资源。
+        </item>
+        <item>
+            数据科学家负责分析与提取数据中的价值。这个职业需要人主动从各种来源获取信息并进行分析来更好地了解业务的表现，
+            并构建AI工具来帮助公司内某些流程实现自动化。
+        </item>
+        <item>
+            会计师指具有一定会计专业水平，经考核取得证书、可以接受当事人委托，承办有关审计、会计、咨询、税务等方面业务的会计人员
+        </item>
+        <item>
+            企业家是自己創立並運營企業的人。企业家会承担起整个企业的责任，为企业长远利益着想，不轻易退休或转职。
+            各个年龄段的人都可以成为企业家。 他们的特点是富有创意、想象力和对工作的热诚。
+        </item>
+    </string-array>
+
+    <string-array name="Joblist">
+        <item>默认</item>
+        <item>程序员</item>
+        <item>软件经理</item>
+        <item>会计师</item>
+        <item>数据科学家</item>
+    </string-array>
+
+    <!-- career test questions -->
+    <string-array name="questions">
+        <item>学习如何投资</item>
+        <item>撰写一份商业计划书</item>
+        <item>学习统计学与会计学</item>
+        <item>学习贸易</item>
+        <item>解决数学问题</item>
+
+        <item>使用数学、科学与科技</item>
+        <item>经常接触数字的工作</item>
+        <item>帮助业务运营</item>
+        <item>推广或推销全新产品</item>
+        <item>创新和设计更好的产品</item>
+
+        <item>创业</item>
+        <item>激励他人实现目标</item>
+        <item>学习现有系统</item>
+        <item>解决科技技术问题</item>
+        <item>紧跟尖端技术</item>
+
+        <item>使用计算机软件设计艺术品</item>
+        <item>设计网站界面</item>
+        <item>评估产品并重新设计</item>
+        <item>学习电脑软件程序</item>
+        <item>编写应用程序或网站</item>
+    </string-array>
+</resources>

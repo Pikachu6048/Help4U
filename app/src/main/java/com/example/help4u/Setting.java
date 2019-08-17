@@ -39,7 +39,7 @@ public class Setting extends AppCompatActivity {
                                         .clear()
                                         .apply();
 
-                                Toast.makeText(thisActivity, "Test Result cleared", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(thisActivity, getString( R.string.test_result_cleared), Toast.LENGTH_SHORT).show();
                             }
                         } )
                         .setNegativeButton( R.string.no, null )

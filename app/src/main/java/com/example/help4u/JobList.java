@@ -127,7 +127,7 @@ public class JobList extends AppCompatActivity  {
         //parameter (jobNameSelected) allow the list view to display jobs with specific job name only
         private CustomAdapter(String jobNameSelected){
             //if job category spinner is not "Default"
-            if(!jobNameSelected.equals( "Default" )){
+            if(!jobNameSelected.equals( getResources().getStringArray( R.array.Joblist )[0] )){
                 //initialize empty list
                 jobNameDisplay = new ArrayList<>();
                 jobDescDisplay = new ArrayList<>();

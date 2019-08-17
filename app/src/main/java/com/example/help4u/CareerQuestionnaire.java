@@ -67,7 +67,7 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
                 //check if all question answered in current page, before moving to next page
                 //if user is in last page
-                if(mNextButton.getText().equals( "Submit" ) && answeredQues == TOTAL_QUESTIONS){
+                if(mNextButton.getText().equals( getResources().getString( R.string.submit ) ) && answeredQues == TOTAL_QUESTIONS){
                     launchTestResult(); //go to career test result activity
                 }
                 //if user already answered all questions in the page
