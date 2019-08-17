@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity
 
     private Button careerTest;
     private Button JobList;
+    private Button mLogout;
 
     // Test btn to other activity by wenz11
     private Button mActivityTest;
@@ -144,6 +145,15 @@ public class MainActivity extends AppCompatActivity
                 LaunchActivityTest();
             }
         });
+
+        // Launch Log Out Activity on Main Screen
+        mLogout = findViewById(R.id.log_out);
+        mLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchLogOut();
+            }
+        });
     }
 
     // Test Title Screen Activity by wenz11
@@ -161,6 +171,13 @@ public class MainActivity extends AppCompatActivity
 
         Intent intent = new Intent(this, CareerTest.class);
         startActivity(intent);
+    }
+
+    public void LaunchLogOut() {
+        // Add sign out operation
+        signOut();
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     @Override
