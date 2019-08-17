@@ -126,4 +126,10 @@
     <string name="apply_for_job">Enquires Details about this job</string>
     <string name="company_email">Company Email</string>
 
+    <!-- Setting element by YeuHarn -->
+    <string name="clear_test_result">Clear Test Result</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="clear_test_result_message">Are you sure you want to clear test result?</string>
+
 </resources>

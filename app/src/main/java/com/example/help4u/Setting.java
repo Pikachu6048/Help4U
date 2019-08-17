@@ -29,9 +29,9 @@ public class Setting extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 new AlertDialog.Builder( thisActivity )
-                        .setTitle( "Clear Test Result" )
-                        .setMessage( "Are you sure you want to clear test result?" )
-                        .setPositiveButton( "Yes", new DialogInterface.OnClickListener() {
+                        .setTitle( R.string.clear_test_result )
+                        .setMessage( R.string.clear_test_result_message )
+                        .setPositiveButton( R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 getSharedPreferences( CareerTestResult.SHARED_PREFS, Context.MODE_PRIVATE )
@@ -42,7 +42,7 @@ public class Setting extends AppCompatActivity {
                                 Toast.makeText(thisActivity, "Test Result cleared", Toast.LENGTH_SHORT).show();
                             }
                         } )
-                        .setNegativeButton( "No", null )
+                        .setNegativeButton( R.string.no, null )
                         .setIcon( R.drawable.ic_delete_black_24dp )
                         .show();
             }

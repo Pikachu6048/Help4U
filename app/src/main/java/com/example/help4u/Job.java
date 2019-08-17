@@ -15,4 +15,10 @@ public abstract class Job {
     public static final int DATA_SCIENTIST = 1; //constant index number for DataScientist
     public static final int ACCOUNTANT = 2; //constant index number for Accountant
     public static final int ENTREPRENEUR = 3; //constant index number for Entrepreneur
+
+    public static final String PROGRAMMER_DESC = "Programmer"; //constant string for Programmer
+    public static final String SOFTWARE_MANAGER_DESC = "Software Manager"; //constant string for Software Manager
+    public static final String DATA_SCIENTIST_DESC = "Data Scientist"; //constant string for Data Scientist
+    public static final String ACCOUNTANT_DESC = "Accountant"; //constant string for Accountant
+    public static final String ENTREPRENEUR_DESC = "Entrepreneur"; //constant string for Entrepreneur
 }

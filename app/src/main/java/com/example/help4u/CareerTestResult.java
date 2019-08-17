@@ -1,21 +1,24 @@
 package com.example.help4u;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
-import static com.example.help4u.Job.*;
+import static com.example.help4u.Job.ACCOUNTANT;
+import static com.example.help4u.Job.DATA_SCIENTIST;
+import static com.example.help4u.Job.ENTREPRENEUR;
+import static com.example.help4u.Job.IT_CATEGORY_DESC;
+import static com.example.help4u.Job.PROGRAMMER;
+import static com.example.help4u.Job.TOTAL_NUM_OF_JOB;
 
 /*
 * Created by YeuHarn
@@ -42,29 +45,30 @@ public class CareerTestResult extends AppCompatActivity {
 
     public static final String PREVIOUS_ACTIVITY = "com.example.help4u.PreviousActivity"; //to indicate user navigate to this page from which activity
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_career_test_result );
 
-        mITLabel = (TextView) findViewById( R.id.textView_IT_label );
-        mBusinessLabel = (TextView) findViewById( R.id.textView_Business_label );
-        mITScore = (ProgressBar) findViewById( R.id.progressBar_IT );
-        mBusinessScore = (ProgressBar) findViewById( R.id.progressBar_Business );
-        mITPercent = (TextView) findViewById( R.id.textView_IT_percentage );
-        mBusinessPercent = (TextView) findViewById( R.id.textView_Business_percentage );
-        mNotAvailable = (TextView) findViewById( R.id.textView_result_not_available );
+        //elements to display test result
+        mITLabel = findViewById( R.id.textView_IT_label );
+        mBusinessLabel = findViewById( R.id.textView_Business_label );
+        mITScore = findViewById( R.id.progressBar_IT );
+        mBusinessScore = findViewById( R.id.progressBar_Business );
+        mITPercent = findViewById( R.id.textView_IT_percentage );
+        mBusinessPercent = findViewById( R.id.textView_Business_percentage );
+        mNotAvailable = findViewById( R.id.textView_result_not_available );
 
         this.setTestResult(); //setup view elements for test result and get userQualification for setRecommendedJob method
 
-        mRecommendedJobTitle = (TextView) findViewById( R.id.textView_recommended_job_title );
-        mRecommendedJobDesc = (TextView) findViewById( R.id.textView_recommended_job_desc );
+        //elements to display recommended job
+        mRecommendedJobTitle = findViewById( R.id.textView_recommended_job_title );
+        mRecommendedJobDesc = findViewById( R.id.textView_recommended_job_desc );
 
-        this.setRecommendedJob(userQualification);
+        this.setRecommendedJob(userQualification); //setup view elements for recommended job based on the passed in userQualification
 
         //navigate user to JobList activity if user click on "More Job" button
-        Button moreJobButton = (Button) findViewById( R.id.button_more_job );
+        Button moreJobButton = findViewById( R.id.button_more_job );
         moreJobButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,53 +79,7 @@ public class CareerTestResult extends AppCompatActivity {
         this.saveResult(); //save test results into SharedPreferences
     }
 
-    //to save test results into SharedPreferences
-    public void saveResult(){
-        //if no test result is recorded, exit function
-        if(testResult == null){
-            return;
-        }
-
-        SharedPreferences.Editor editor = getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE ).edit();
-
-        //store user qualification into sharedPreferences
-        editor.putString( SHARED_PREFS_KEY + "Qualification", userQualification );
-
-        //store interest score of each job into sharedPreferences
-        editor.putInt( SHARED_PREFS_KEY + PROGRAMMER, testResult[PROGRAMMER] );
-        editor.putInt( SHARED_PREFS_KEY + DATA_SCIENTIST, testResult[DATA_SCIENTIST] );
-        editor.putInt( SHARED_PREFS_KEY + ACCOUNTANT, testResult[ACCOUNTANT] );
-        editor.putInt( SHARED_PREFS_KEY + ENTREPRENEUR, testResult[ENTREPRENEUR] );
-
-        editor.apply(); //save changes
-    }
-
-    //to load user qualification from SharedPreferences
-    public String loadQualification(){
-        //get user qualification from sharedPreferences, return null if data not exist
-        return getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE ).getString( SHARED_PREFS_KEY + "Qualification", null );
-    }
-
-    //to load test results from SharedPreferences
-    public int[] loadResult(){
-        int[] testRes = null;
-
-        SharedPreferences sharedPreferences = getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE );
-
-        //if test result data exists in sharedPreferences
-        if(sharedPreferences.contains( SHARED_PREFS_KEY + PROGRAMMER )){
-            testRes = new int[TOTAL_NUM_OF_JOB];
-
-            testRes[PROGRAMMER] = sharedPreferences.getInt( SHARED_PREFS_KEY + PROGRAMMER, 0 );
-            testRes[DATA_SCIENTIST] = sharedPreferences.getInt( SHARED_PREFS_KEY + DATA_SCIENTIST, 0 );
-            testRes[ACCOUNTANT] = sharedPreferences.getInt( SHARED_PREFS_KEY + ACCOUNTANT, 0 );
-            testRes[ENTREPRENEUR] = sharedPreferences.getInt( SHARED_PREFS_KEY + ENTREPRENEUR, 0 );
-        }
-
-        //else test result not exist in sharedPreferences, return null
-        return testRes;
-    }
-
+    //to display test result and get user qualification
     private void setTestResult(){
         String previousActivity = getIntent().getStringExtra( PREVIOUS_ACTIVITY );
 
@@ -141,7 +99,7 @@ public class CareerTestResult extends AppCompatActivity {
 
         //if test result available, compute interest scores for each job category and visualize in progress bar
         if(testResult != null){
-            //show all result progress bar
+            //show all result progress bar and labels
             mITLabel.setVisibility( View.VISIBLE );
             mBusinessLabel.setVisibility( View.VISIBLE );
             mITScore.setVisibility( View.VISIBLE );
@@ -302,6 +260,53 @@ public class CareerTestResult extends AppCompatActivity {
                 mRecommendedJobDesc.setText( jobDesc[ENTREPRENEUR] );
             }
         }
+    }
+
+    //to save test results into SharedPreferences
+    public void saveResult(){
+        //if no test result is recorded, exit function
+        if(testResult == null){
+            return;
+        }
+
+        SharedPreferences.Editor editor = getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE ).edit();
+
+        //store user qualification into sharedPreferences
+        editor.putString( SHARED_PREFS_KEY + "Qualification", userQualification );
+
+        //store interest score of each job into sharedPreferences
+        editor.putInt( SHARED_PREFS_KEY + PROGRAMMER, testResult[PROGRAMMER] );
+        editor.putInt( SHARED_PREFS_KEY + DATA_SCIENTIST, testResult[DATA_SCIENTIST] );
+        editor.putInt( SHARED_PREFS_KEY + ACCOUNTANT, testResult[ACCOUNTANT] );
+        editor.putInt( SHARED_PREFS_KEY + ENTREPRENEUR, testResult[ENTREPRENEUR] );
+
+        editor.apply(); //save changes
+    }
+
+    //to load user qualification from SharedPreferences
+    public String loadQualification(){
+        //get user qualification from sharedPreferences, return null if data not exist
+        return getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE ).getString( SHARED_PREFS_KEY + "Qualification", null );
+    }
+
+    //to load test results from SharedPreferences
+    public int[] loadResult(){
+        int[] testRes = null;
+
+        SharedPreferences sharedPreferences = getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE );
+
+        //if test result data exists in sharedPreferences
+        if(sharedPreferences.contains( SHARED_PREFS_KEY + PROGRAMMER )){
+            testRes = new int[TOTAL_NUM_OF_JOB];
+
+            testRes[PROGRAMMER] = sharedPreferences.getInt( SHARED_PREFS_KEY + PROGRAMMER, 0 );
+            testRes[DATA_SCIENTIST] = sharedPreferences.getInt( SHARED_PREFS_KEY + DATA_SCIENTIST, 0 );
+            testRes[ACCOUNTANT] = sharedPreferences.getInt( SHARED_PREFS_KEY + ACCOUNTANT, 0 );
+            testRes[ENTREPRENEUR] = sharedPreferences.getInt( SHARED_PREFS_KEY + ENTREPRENEUR, 0 );
+        }
+
+        //else test result not exist in sharedPreferences, return null
+        return testRes;
     }
 
     private void launchJobList(){

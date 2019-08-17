@@ -25,10 +25,7 @@ public class JobDetails extends AppCompatActivity {
     TextView jobSalary;
     ImageView compLogo;
     TextView compAddress;
-    TextView applyJob;
     TextView compEmail;
-
-    private Button mNavigation;
 
     //member variables for set reminder function
     private Calendar mReminderDateTime; //to store user selected date and time

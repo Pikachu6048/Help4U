@@ -213,7 +213,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.action_settings:
                 // Add startActivity intent if click on setting
                 startActivity( new Intent( this, Setting.class ) );
-
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

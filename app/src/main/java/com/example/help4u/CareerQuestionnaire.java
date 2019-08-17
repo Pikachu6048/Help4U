@@ -1,6 +1,9 @@
 package com.example.help4u;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -11,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Created by YeuHarn
@@ -44,14 +48,13 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
         currentPageNumber = 0;
 
-        mProgressBar = (ProgressBar) findViewById( R.id.progressBar_test_questions );
-        mProgressBar.setProgress( 25 ); //initially start from 25%
+        mProgressBar = findViewById( R.id.progressBar_test_questions );
 
         mPagerAdapter = new QuestionStatePagerAdapter( getSupportFragmentManager() );
-        mViewPager = (ViewPager)findViewById( R.id.question_container );
+        mViewPager = findViewById( R.id.question_container );
         this.setupViewPager( mViewPager );
 
-        mNextButton = (Button)findViewById( R.id.button_next_question );
+        mNextButton = findViewById( R.id.button_next_question );
         mNextButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,5 +112,33 @@ public class CareerQuestionnaire extends AppCompatActivity {
         intent.putExtra( Qualification.QUALIFICATION, qualification );
 
         startActivity( intent );
+    }
+
+/*
+ * A adapter class that use to manage activity_career_questionnaire > question_container
+ * A class for navigating between questions fragments
+ * */
+    private class QuestionStatePagerAdapter extends FragmentStatePagerAdapter {
+
+        private List<Fragment> mFragmentList;
+
+        public QuestionStatePagerAdapter(FragmentManager fm) {
+            super( fm );
+            mFragmentList = new ArrayList<>();
+        }
+
+        public void addFragment(Fragment fragment){
+            mFragmentList.add(fragment);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get( position );
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
     }
 }
