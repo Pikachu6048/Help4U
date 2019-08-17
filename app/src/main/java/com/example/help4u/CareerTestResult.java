@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.example.help4u.Job.*;
+
 /*
 * Created by YeuHarn
 * An activity to display user's career test result and compute recommended job, save and load test results from user local device ( SharedPreferences )
@@ -32,19 +34,14 @@ public class CareerTestResult extends AppCompatActivity {
 
     private TextView mRecommendedJobTitle; //to display computed recommended job title
     private TextView mRecommendedJobDesc; //to display computed recommended job description
-    private Button mMoreJobButton;
     private int[] testResult; //to store test answers
+    private String userQualification; //to store user's qualification
 
     public static final String SHARED_PREFS = "com.example.help4u.TestResult"; //SharedPreferences name
     public static final String SHARED_PREFS_KEY = "Result"; //key to store data into SharedPreferences
 
-    public static final String PREVIOUS_ACTIVITY = "com.example.help4U.PreviousActivity"; //to indicate user navigate to this page from which activity
-    public static final int TOTAL_NUM_OF_JOB = 4; //to indicate the total number of jobs
+    public static final String PREVIOUS_ACTIVITY = "com.example.help4u.PreviousActivity"; //to indicate user navigate to this page from which activity
 
-    private static final int PROGRAMMER = 0;
-    private static final int DATA_SCIENTIST = 1;
-    private static final int ACCOUNTANT = 2;
-    private static final int ENTREPRENEUR = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +56,16 @@ public class CareerTestResult extends AppCompatActivity {
         mBusinessPercent = (TextView) findViewById( R.id.textView_Business_percentage );
         mNotAvailable = (TextView) findViewById( R.id.textView_result_not_available );
 
-        this.setTestResult();
+        this.setTestResult(); //setup view elements for test result and get userQualification for setRecommendedJob method
 
         mRecommendedJobTitle = (TextView) findViewById( R.id.textView_recommended_job_title );
         mRecommendedJobDesc = (TextView) findViewById( R.id.textView_recommended_job_desc );
 
-        this.setRecommendedJob("IT"); //*****get qualification
+        this.setRecommendedJob(userQualification);
 
-        mMoreJobButton = (Button) findViewById( R.id.button_more_job );
-        mMoreJobButton.setOnClickListener( new View.OnClickListener() {
+        //navigate user to JobList activity if user click on "More Job" button
+        Button moreJobButton = (Button) findViewById( R.id.button_more_job );
+        moreJobButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchJobList();
@@ -86,6 +84,9 @@ public class CareerTestResult extends AppCompatActivity {
 
         SharedPreferences.Editor editor = getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE ).edit();
 
+        //store user qualification into sharedPreferences
+        editor.putString( SHARED_PREFS_KEY + "Qualification", userQualification );
+
         //store interest score of each job into sharedPreferences
         editor.putInt( SHARED_PREFS_KEY + PROGRAMMER, testResult[PROGRAMMER] );
         editor.putInt( SHARED_PREFS_KEY + DATA_SCIENTIST, testResult[DATA_SCIENTIST] );
@@ -93,6 +94,12 @@ public class CareerTestResult extends AppCompatActivity {
         editor.putInt( SHARED_PREFS_KEY + ENTREPRENEUR, testResult[ENTREPRENEUR] );
 
         editor.apply(); //save changes
+    }
+
+    //to load user qualification from SharedPreferences
+    public String loadQualification(){
+        //get user qualification from sharedPreferences, return null if data not exist
+        return getSharedPreferences( SHARED_PREFS, Context.MODE_PRIVATE ).getString( SHARED_PREFS_KEY + "Qualification", null );
     }
 
     //to load test results from SharedPreferences
@@ -116,16 +123,17 @@ public class CareerTestResult extends AppCompatActivity {
     }
 
     private void setTestResult(){
-        String previousActivity = getIntent().getExtras().getString( PREVIOUS_ACTIVITY );
+        String previousActivity = getIntent().getStringExtra( PREVIOUS_ACTIVITY );
 
         //if user navigate to this page directly from Career Test main page
         if(previousActivity.equals( "CareerTest" )){
             testResult = loadResult(); //get test result from SharedPreferences
+            userQualification = loadQualification(); //get user qualification from SharedPreferences
         }
         //if user navigate to this page after answering all test questions
         else if(previousActivity.equals( "CareerQuestionnaire" )){
-            //compute interest score from latest test answers
-            testResult = this.computeInterestScore( CareerQuestionnaire.selectedAnswer );
+            testResult = this.computeInterestScore( CareerQuestionnaire.selectedAnswer ); //compute interest score from latest test answers
+            userQualification = getIntent().getStringExtra(Qualification.QUALIFICATION); //get user qualification from previous activity
         }
         else{
             testResult = null;
@@ -256,9 +264,8 @@ public class CareerTestResult extends AppCompatActivity {
         return interestScore;
     }
 
-    //to compute recommended job based on test result and user's qualification
+    //to compute recommended job based on test result and user's Qualification
     private void setRecommendedJob(String qualification){
-        //*****get qualification
         //if test result not available, display "Recommended Job not available"
         if(testResult == null){
             mRecommendedJobTitle.setText( "" );
@@ -270,9 +277,9 @@ public class CareerTestResult extends AppCompatActivity {
         String[] jobTitle = getResources().getStringArray( R.array.job_title );
         String[] jobDesc = getResources().getStringArray( R.array.job_desc );
 
-        //check with user's qualification and get the higher interest score and display relevant job title & job desc
-        //if user's qualification is "IT", check interest score for jobs in IT category
-        if(qualification.equals( "IT" )){
+        //check with user's Qualification and get the higher interest score and display relevant job title & job desc
+        //if user's Qualification is "IT", check interest score for jobs in IT category
+        if(qualification.equals( IT_CATEGORY_DESC )){
             //if user's interest score for "Programmer" is higher than "Data Scientist"
             if(Math.max( testResult[PROGRAMMER], testResult[DATA_SCIENTIST] ) == testResult[PROGRAMMER]){
                 mRecommendedJobTitle.setText( jobTitle[PROGRAMMER] );
@@ -283,7 +290,7 @@ public class CareerTestResult extends AppCompatActivity {
                 mRecommendedJobDesc.setText( jobDesc[DATA_SCIENTIST] );
             }
         }
-        //else user's qualification is "Business", check interest score for jobs in Business category
+        //else user's Qualification is "Business", check interest score for jobs in Business category
         else{
             //if user's interest score for "Accountant" is higher than "Entrepreneur"
             if(Math.max( testResult[ACCOUNTANT], testResult[ENTREPRENEUR] ) == testResult[ACCOUNTANT]){

@@ -21,6 +21,9 @@ import java.util.ArrayList;
 
 public class CareerQuestionnaire extends AppCompatActivity {
 
+    public static final int TOTAL_QUESTIONS = 20; //total number of test questions
+    public static final int DEFAULT_ANSWER = -1; //default value for questions that have not been answered yet
+
     public static ArrayList<Integer> selectedAnswer; //to record user's selected answer throughout the test
     public static int currentPageNumber; //to keep track on which page of questions user is answering
 
@@ -28,9 +31,6 @@ public class CareerQuestionnaire extends AppCompatActivity {
     private QuestionStatePagerAdapter mPagerAdapter; //adapter for ViewPager
     private ViewPager mViewPager; //fragment container
     private Button mNextButton; //to let user navigate to next page question
-
-    public static final int TOTAL_QUESTIONS = 20; //total number of test questions
-    public static final int DEFAULT_ANSWER = -1; //default value for questions that have not been answered yet
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,6 @@ public class CareerQuestionnaire extends AppCompatActivity {
         currentPageNumber = 0;
 
         mProgressBar = (ProgressBar) findViewById( R.id.progressBar_test_questions );
-        mProgressBar.setScaleY(3f); //makes the progress bar thicker
         mProgressBar.setProgress( 25 ); //initially start from 25%
 
         mPagerAdapter = new QuestionStatePagerAdapter( getSupportFragmentManager() );
@@ -89,7 +88,9 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
     //to create fragments for test questions, 1 fragment(page) 5 test questions, total 4 fragments
     private void setupViewPager(ViewPager viewPager){
-        String[] testQuestions = getResources().getStringArray( R.array.questions );
+        String[] testQuestions = getResources().getStringArray( R.array.questions ); //get test questions
+
+        //setup question fragments
         mPagerAdapter.addFragment( QuestionFragment.newInstance( testQuestions, 0 ) );
         mPagerAdapter.addFragment( QuestionFragment.newInstance( testQuestions, 1 ) );
         mPagerAdapter.addFragment( QuestionFragment.newInstance( testQuestions, 2 ) );
@@ -103,6 +104,9 @@ public class CareerQuestionnaire extends AppCompatActivity {
 
         //to indicate user is directly navigate to Test Result page from Career Test main page
         intent.putExtra( CareerTestResult.PREVIOUS_ACTIVITY, "CareerQuestionnaire" );
+
+        String qualification = getIntent().getStringExtra( Qualification.QUALIFICATION );
+        intent.putExtra( Qualification.QUALIFICATION, qualification );
 
         startActivity( intent );
     }

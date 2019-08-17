@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".AboutUs"
             android:label="About Us"
@@ -48,6 +49,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.CareerTest" />
+        </activity>
+        <activity
+            android:name=".Qualification"
+            android:label="Qualification"
+            android:parentActivityName=".CareerTest">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.CareerTest"/>
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".TitleScreenActivity" />

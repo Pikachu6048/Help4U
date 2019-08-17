@@ -17,6 +17,7 @@
         android:max="100"
         android:progress="25"
         android:progressTint="#11FD00"
+        android:scaleY="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

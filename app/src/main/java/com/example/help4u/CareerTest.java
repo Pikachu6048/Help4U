@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,24 +17,23 @@ import android.widget.Toast;
 **/
 public class CareerTest extends AppCompatActivity {
 
-    private Button mTakeTestButton; //navigate to Career Questionnaire activity
-    private Button mTestResultButton; //navigate to Career Test Result activity
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_career_test);
 
-        mTakeTestButton = (Button) findViewById( R.id.button_take_test );
-        mTakeTestButton.setOnClickListener( new View.OnClickListener(){
+        //navigate to Career Questionnaire activity
+        Button takeTestButton = (Button) findViewById( R.id.button_take_test );
+        takeTestButton.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 launchCareerQuestionnaire();
             }
         } );
 
-        mTestResultButton = (Button) findViewById( R.id.button_test_result );
-        mTestResultButton.setOnClickListener( new View.OnClickListener() {
+        //navigate to Career Test Result activity
+        Button testResultButton = (Button) findViewById( R.id.button_test_result );
+        testResultButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences sharedPreferences = getSharedPreferences( CareerTestResult.SHARED_PREFS, Context.MODE_PRIVATE );
@@ -51,7 +51,7 @@ public class CareerTest extends AppCompatActivity {
     }
 
     private void launchCareerQuestionnaire(){
-        Intent intent = new Intent(this, CareerQuestionnaire.class );
+        Intent intent = new Intent(this, Qualification.class );
         startActivity(intent);
     }
 
