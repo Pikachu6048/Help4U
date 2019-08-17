@@ -227,7 +227,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void LaunchCareerTest() {
-
         Intent intent = new Intent(this, CareerTest.class);
         startActivity(intent);
     }
@@ -272,6 +271,7 @@ public class MainActivity extends AppCompatActivity
                 return true;
             case R.id.action_settings:
                 // Add startActivity intent if click on setting
+                startActivity( new Intent( this, Setting.class ) );
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -298,6 +298,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, JobList.class);
             startActivity(intent);
         }else if (id == R.id.nav_setting) {
+            Intent intent = new Intent( this, Setting.class );
+            startActivity( intent );
 
         } else if (id == R.id.nav_about_us) {
 

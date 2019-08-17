@@ -28,10 +28,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.MainActivity" />
         </activity>
-
+        <activity
+            android:name=".Setting"
+            android:label="@string/action_settings"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
         <activity
             android:name=".AboutUs"
-            android:label="About Us"
+            android:label="@string/menu_about_us"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -39,7 +46,7 @@
         </activity>
         <activity
             android:name=".JobDetails"
-            android:label="Job Details"
+            android:label="@string/job_detail"
             android:parentActivityName=".JobList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -47,7 +54,7 @@
         </activity>
         <activity
             android:name=".CareerTestResult"
-            android:label="Career Test Result"
+            android:label="@string/test_result"
             android:parentActivityName=".CareerTest">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -55,7 +62,7 @@
         </activity>
         <activity
             android:name=".CareerQuestionnaire"
-            android:label="Career Test Question"
+            android:label="@string/career_test_question"
             android:parentActivityName=".CareerTest">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -63,18 +70,18 @@
         </activity>
         <activity
             android:name=".Qualification"
-            android:label="Qualification"
+            android:label="@string/qualification"
             android:parentActivityName=".CareerTest">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.help4u.CareerTest" />
+                android:value="com.example.help4u.CareerTest"/>
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".TitleScreenActivity" />
         <activity android:name=".Register" />
         <activity
             android:name=".JobList"
-            android:label="Job List"
+            android:label="@string/job_list"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -82,7 +89,7 @@
         </activity>
         <activity
             android:name=".CareerTest"
-            android:label="Career Test"
+            android:label="@string/menu_career_test"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

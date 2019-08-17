@@ -21,7 +21,7 @@ public class Qualification extends AppCompatActivity {
         setContentView( R.layout.activity_qualification );
 
         //set "IT" as user qualification
-        Button qualiIT = (Button) findViewById( R.id.button_quali_IT );
+        Button qualiIT = findViewById( R.id.button_quali_IT );
         qualiIT.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,7 +30,7 @@ public class Qualification extends AppCompatActivity {
         } );
 
         //set "Business" as user qualification
-        Button qualiBusiness = (Button) findViewById( R.id.button_quali_business );
+        Button qualiBusiness = findViewById( R.id.button_quali_business );
         qualiBusiness.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
