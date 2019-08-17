@@ -126,4 +126,17 @@
     <string name="apply_for_job">Enquires Details about this job</string>
     <string name="company_email">Company Email</string>
 
+    <!--For User Profile module by wenz11-->
+    <string name="user_profile_background">User Profile Background</string>
+    <string name="user_profile">User Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="enter_your_favorite_quote">Enter your favorite quote</string>
+    <string name="quote">Quote</string>
+
 </resources>
