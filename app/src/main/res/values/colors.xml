@@ -10,5 +10,7 @@
     <color name="colorCancelRipple">#D14712</color>
     <!--black background for splash screen-->
     <color name="colorDarkBackground">#33333D</color>
+    <!--darker shade for Google Sign Up button ripple effect-->
+    <color name="colorSignInRipple">#8BC34A</color>
 
 </resources>

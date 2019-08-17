@@ -10,7 +10,7 @@
     tools:context=".LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayout_Username"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +18,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:hint="@string/username"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/error"
         app:boxStrokeColor="@color/colorPrimary"
         app:boxStrokeWidth="2dp"
         app:helperText="Your Email Address"
@@ -30,13 +32,14 @@
         app:layout_constraintVertical_bias="0.13999999">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_login_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/textInputLayout2_Password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,16 +47,19 @@
         android:layout_marginTop="72dp"
         android:hint="@string/password"
         app:boxStrokeColor="@color/colorPrimary"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/errorForPassword"
         app:boxStrokeWidth="2dp"
-        app:helperText="Password must be more than 8 letters"
+        app:helperText="Password must be more than 6 letters"
         app:helperTextEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_Username"
         app:passwordToggleDrawable="@drawable/toggle_password_visibility"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_login_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -66,7 +72,7 @@
     <!--app:iconPadding="10dp"-->
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/button_login"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="180dp"
         android:layout_height="50dp"
@@ -81,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2_Password"
         app:rippleColor="@color/colorAccent" />
 
     <com.google.android.material.button.MaterialButton
@@ -98,7 +104,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton"
+        app:layout_constraintTop_toBottomOf="@+id/button_login"
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/colorAccent" />
 

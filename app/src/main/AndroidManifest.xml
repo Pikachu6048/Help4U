@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AboutUs"
+        <activity
+            android:name=".AboutUs"
             android:label="About Us"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -80,7 +81,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignInActivity" />
     </application>
 
 </manifest>

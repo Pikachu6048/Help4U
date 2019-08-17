@@ -32,6 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -74,28 +75,20 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         /*Sign in operation by wenz11*/
-/*        // Set default username is anonymous.
+        // Set default username is anonymous.
         mUsername = ANONYMOUS;
 
         // Initialize Firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
         if (mFirebaseUser == null) {
-            // Not signed in, launch the Sign In activity
-            startActivity(new Intent(this, SignInActivity.class));
+            // Not signed in, Launch the Login activity
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
         } else {
-            mUsername = mFirebaseUser.getDisplayName();
-            if (mFirebaseUser.getPhotoUrl() != null) {
-                mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
-            }
+            mUsername = mFirebaseUser.getEmail();
         }
-
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this *//* FragmentActivity *//*, this *//* OnConnectionFailedListener *//*)
-                .addApi(Auth.GOOGLE_SIGN_IN_API)
-                .build();*/
         /*Sign in operation by wenz11*/
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -109,6 +102,23 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Get Log out button on Nav Header Drawer by wenz11
+        View hView = navigationView.getHeaderView(0);
+        Button mBtnLogout = hView.findViewById(R.id.btnLogout);
+        mBtnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Add sign out operation
+                signOut();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+
+        // Set Text View to the user's email
+        TextView mUserEmail = hView.findViewById(R.id.userEmail);
+        mUserEmail.setText(mUsername);
 
         careerTest = findViewById(R.id.nav_career_test);
         careerTest.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +148,7 @@ public class MainActivity extends AppCompatActivity
 
     // Test Title Screen Activity by wenz11
     private void LaunchActivityTest() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, CareerTest.class);
         startActivity(intent);
     }
 
@@ -146,7 +156,6 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, JobList.class);
         startActivity(intent);
     }
-
 
     public void LaunchCareerTest() {
 
@@ -180,10 +189,9 @@ public class MainActivity extends AppCompatActivity
 // by wenz11
         switch (item.getItemId()) {
             case R.id.action_sign_out:
-                mFirebaseAuth.signOut();
-                Auth.GoogleSignInApi.signOut(mGoogleApiClient);
-                mUsername = ANONYMOUS;
-                startActivity(new Intent(this, SignInActivity.class));
+                // Add sign out operation
+                signOut();
+                startActivity(new Intent(this, MainActivity.class));
                 finish();
                 return true;
             case R.id.action_settings:
@@ -235,11 +243,21 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
 
+    // Sign Out Function
+    private void signOut() {
+        mFirebaseAuth.signOut();
+    }
+
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in.
-        // TODO: Add code to check if user is signed in.
+        // Check if user is signed in
+        // Can happen during onStart and onResume
+        FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
+        if (currentUser != null) {
+            // Get User Email
+            mUsername = currentUser.getEmail();
+        }
     }
 
     @Override
