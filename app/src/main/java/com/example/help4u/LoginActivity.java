@@ -135,8 +135,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } else if(!pattern.matcher(email).matches()) {
             mtextInputLayout_Username.setError("Invalid Email Address Format");
             valid = false;
-        }
-        else {
+        } else {
             mtextInputLayout_Username.setError(null);
         }
 

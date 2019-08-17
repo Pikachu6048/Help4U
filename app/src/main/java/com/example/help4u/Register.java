@@ -18,7 +18,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
@@ -75,10 +78,39 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success
-//                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                            Toast.makeText(Register.this, "Account has successfully been created!",
-                                    Toast.LENGTH_SHORT).show();
-                            SignInAfterSignUp();
+                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                            String userid = user.getUid();
+
+                            DatabaseReference reference;
+                            reference = FirebaseDatabase.getInstance().getReference("userprofile").child(userid);
+
+                            HashMap<String, String> hashMap = new HashMap<>();
+                            hashMap.put("id", userid);
+                            hashMap.put("email", mtext_input_username.getText().toString());
+                            hashMap.put("name", "Name");
+                            hashMap.put("phonenumber", "Phone Number");
+                            hashMap.put("photoUrl", "default");
+                            hashMap.put("quote", "Quote");
+                            reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    // Successfully Sign Up
+                                    if(task.isSuccessful()) {
+                                        Toast.makeText(Register.this, "Account has successfully been created!",
+                                                Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Register.this, "Login Successfully!",
+                                                Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(Register.this, MainActivity.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }
+                            });
+
+//                            Toast.makeText(Register.this, "Account has successfully been created!",
+//                                    Toast.LENGTH_SHORT).show();
+//                            SignInAfterSignUp();
                         } else if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                             Toast.makeText(Register.this,
                                     "This email has already been registered with Help4U!", Toast.LENGTH_SHORT).show();

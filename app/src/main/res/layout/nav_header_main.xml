@@ -9,18 +9,20 @@
     android:gravity="bottom"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userImageNavHeader"
+        android:layout_marginTop="0px"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:elevation="1dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:src="@drawable/pikademo"
+        app:layout_constraintBottom_toTopOf="@+id/nameNavHeader"
+        app:layout_constraintStart_toStartOf="@+id/nameNavHeader" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/nameNavHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
@@ -43,22 +45,20 @@
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="65dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="#BBDEFB"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/logout"
         android:textColor="#000000"
         android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.32999998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
