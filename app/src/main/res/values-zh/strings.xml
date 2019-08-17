@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="IT_label">资讯\n科技</string>
-    <string name="about_us_full">这是一个由 Ang Zuan Wen, Lim Yeu Harn 和 Chong Jia Yi 所开发的移动应用程式。开发宗旨是为了解决联合国的可持续发展目标之一（失业）。这个程序的目的是为了帮助用户找到适合的工作环境与职业。</string>
+    <string name="about_us_full">这是一个由 Ang Zuan Wen, Lim Yeu Harn 和 Chong Jia Yi 所开发的移动应用程式。开发宗旨是为了解决国家的其中一个问题之一（失业）。这个程序的目的是为了帮助用户找到适合的工作环境与职业。</string>
     <string name="action_settings">设置</string>
     <string name="address">地址</string>
     <string name="apply_for_job">查询此工作的详情信息</string>
@@ -42,7 +42,7 @@
     <string name="question_label">问题</string>
     <string name="recommended_job">推荐职业</string>
     <string name="recommended_job_not_available">无推荐职业</string>
-    <string name="salary">薪金</string>
+    <string name="salary">薪金:</string>
     <string name="set_reminder">设置提醒</string>
     <string name="sign_in">登录</string>
     <string name="sign_out">登出</string>

@@ -22,15 +22,18 @@ public class JobList extends AppCompatActivity  {
     private ListView jobListView;
     private Spinner job_category_list;
 
+
+
+
     String[] jobName = {"Accountant", "Accountant",
                         "Programmer", "Software Manager",
-                        "Data Scientist", "Company 6",
-                        "Company 7", "Company 8"};
+                        "Data Scientist", "Programmer",
+                        "Data Scientist", "Software Manager"};
 
     String[] jobDesc = {"Ambition Group Malaysia Sdn Bhd", "Vitality Boost Sdn Bhd",
                         "MULTI EPSILON SOLUTIONS SDN BHD", "SEEK ASIA",
-                        "RGF Executive Search Malaysia Sdn Bhd", "Company 6 desc",
-                        "Company 7 desc", "Company 8 desc",};
+                        "RGF Executive Search Malaysia Sdn Bhd", "AsiaPay (M) Sdn Bhd",
+                        "Astro", "Captii Ventures Pte. Ltd"};
 
 
     String[] jobFullDesc = {
@@ -40,33 +43,34 @@ public class JobList extends AppCompatActivity  {
                     "Have knowledge in C#, ASP.net, MS SQL, HTML, JS skills would be great.",
             " You will maintain a strong collaborative relationship with the Product Manager who shares the responsibility of balancing platform health and product growth.",
             "the Data Scientist will be responsible for all analysis across multiple markets in building predicative models and subsequently putting models into production. Working hand in hand with the cybersecurity team, the Data Scientist will work on enhancing the business",
-            "Company 6 full desc",
-            "Company 7 full desc",
-            "Company 8 full desc"
+            "Knowledge in Java, HTML5, Javascript, CSS, Node.js, jQuery and Bootstrap\n" +
+                    "Knowledge in mobile application development such as iOS, Android and React Native is a plus",
+            "We are looking for a Data Scientist who will support our products, ecommerce, customer, advertising, media contents and other divisions in Astro and assist leadership with the insights gained from analyzing company wide and related data.",
+            "Lead the tech team through process of designing and solutioning. With the aim of creating great products that will delight users and not the easiest to execute"
     };
 
     String[] jobSalary = {"RM3000-3500", "RM3000",
                         "RM3000-3500", "RM3500-7000",
                         "RM10000-15000", "RM4000",
-                        "RM3000-3500", "RM9000"};
+                        "Above expected salary", "RM10000-15000"};
 
     String[] compAddress = {"Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
                             "Jalan Desa, Taman Desa, 58100 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
                             "48 Jalan 11/146, Bandar Tasik Selatan, Sg. Besi 57000 Kuala Lumpur",
                             "20, Menara AIA Cap Square No. 10, Jalan Munshi Abdullah 50100 Kuala Lumpur",
                             "The Gardens South Tower, Mid Valley City, Lingkaran Syed Putra, 59200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
-                            "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
-                            "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL",
+                            "19A-17-3, Level 17, UOA Centre, No.21 Jalan Pinang, 50450 Kuala Lumpur",
+                            "57000 Lebuhraya Bukit Jalil Technology Park Malaysia Kuala Lumpur Federal Territory of Kuala Lumpur Malaysia",
                             "Suite 20-03, Level 20, The Intermark 348, Jalan Tun Razak, 50400 KL"};
 
     String[] compEmail = {"karyen.wong@ambition.com.my", " enquiries@oaic.gov.au", " info@multisoft.com.my",
-                        "smacartney@seek.com.au", "nazmina.khan@rgf-executive.com", "karyen.wong@ambition.com.my"
-                        , "karyen.wong@ambition.com.my", "karyen.wong@ambition.com.my"};
+                        "smacartney@seek.com.au", "nazmina.khan@rgf-executive.com", "sales@asiapay.com,"
+                        , "th_outreach@astro.com.my", "careers@captii.vc"};
 
 
     int[] compLogo = {R.drawable.ambition_logo, R.drawable.boost_logo, R.drawable.multi_logo,
-                        R.drawable.seek_asia, R.drawable.rgf_logo, R.drawable.ambition_logo,
-                        R.drawable.ambition_logo, R.drawable.ambition_logo};
+                        R.drawable.seek_asia, R.drawable.rgf_logo, R.drawable.asiapay_logo,
+                        R.drawable.astro_logo, R.drawable.captii_logo};
 
 
     @Override
