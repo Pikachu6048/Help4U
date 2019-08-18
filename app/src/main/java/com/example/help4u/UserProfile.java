@@ -316,7 +316,8 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
     private String getFileExtension(Uri uri) {
