@@ -166,5 +166,16 @@
                  <item>Akauntan</item>
                  <item>Scientist Data</item>
     </string-array>
+    <string name="account_cannot_create">Akaun tidak boleh dibuat!</string>
+    <string name="account_create_successful">Akaun telah berjaya dicipta!</string>
+    <string name="could_not_upload_image">" 22/5000 Tidak Dapat Memperbaharui Imej"</string>
+    <string name="email_already_registered">E-mel ini telah didaftarkan dengan Help4U!</string>
+    <string name="image_clicked">Imej diklik</string>
+    <string name="invalid_phone_format">Format Nombor Telefon Tidak Sah +60XXXXXXXXX</string>
+    <string name="logout_successful">Log keluar kejayaan</string>
+    <string name="no_image_selected">Tiada imej dipilih</string>
+    <string name="password_not_match">Kata laluan tidak sepadan</string>
+    <string name="upload_in_progress">Muat naik sedang berjalan</string>
+    <string name="uploading">Memuat naik</string>
 
 </resources>
