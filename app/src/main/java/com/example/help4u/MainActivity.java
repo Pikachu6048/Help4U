@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
         /*splash screen by wenz11*/
         /*Change this activity's manifest to AppTheme.Splash
         Temporary disable it for designing purposes   */
-//        setTheme(R.style.AppTheme_NoActionBar);
+        setTheme(R.style.AppTheme_NoActionBar);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
