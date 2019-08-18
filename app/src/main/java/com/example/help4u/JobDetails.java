@@ -257,8 +257,6 @@ public class JobDetails extends AppCompatActivity {
                 }
             }
         });
-        Intent intent = new Intent(JobDetails.this, JobList.class);
-        startActivity(intent);
 
         // Get uri of drawable - Store image to database from drawables
         Resources res = getResources();
@@ -302,5 +300,7 @@ public class JobDetails extends AppCompatActivity {
                 }
             });
         }
+        Intent intent = new Intent(JobDetails.this, JobList.class);
+        startActivity(intent);
     }
 }
