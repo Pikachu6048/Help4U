@@ -165,7 +165,21 @@
     <string name="save_profile">更新个人档案</string>
     <string name="user_profile">用户个人档案</string>
     <string name="user_profile_background">用户个人档案背景</string>
+    <string name="account_cannot_create">创建账户失败！</string>
+    <string name="account_create_successful">创建账户成功！</string>
+    <string name="could_not_upload_image">上传图片失败</string>
+    <string name="email_already_registered">电邮已注册</string>
+    <string name="image_clicked">已点击图片</string>
+    <string name="invalid_phone_format">手机号码格式错误 +60XXXXXXXXX</string>
+    <string name="logout_successful">登出成功！</string>
+    <string name="no_image_selected">没有图片被选取</string>
+    <string name="password_not_match">密码不正确</string>
+    <string name="upload_in_progress">正在上传</string>
+    <string name="uploading">上传中</string>
     <string name="job_title">工作标题</string>
     <string name="log_out">登出</string>
     <string name="job_wishlist">心愿单</string>
+    <string name="job_title">工作标题</string>
+    <string name="job_wishlist">工作心愿单</string>
+    <string name="log_out">登出</string>
 </resources>

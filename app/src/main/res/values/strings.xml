@@ -173,5 +173,16 @@
     <string name="position">Position</string>
     <string name="job_title">Job title</string>
     <string name="company_logo" translatable="false">company logo</string>
+    <string name="logout_successful">Successfully Logout!</string>
+    <string name="account_create_successful">Account has successfully been created!</string>
+    <string name="account_cannot_create">Account cannot be created!</string>
+    <string name="email_already_registered">This email has already been registered with Help4U!</string>
+    <string name="password_not_match">Password does not match</string>
+    <string name="invalid_phone_format">Invalid Phone Number Format +60XXXXXXXXX</string>
+    <string name="uploading">Uploading</string>
+    <string name="could_not_upload_image">Could Not Update Image</string>
+    <string name="no_image_selected">No image selected</string>
+    <string name="upload_in_progress">Upload in progress</string>
+    <string name="image_clicked">Image is Clicked</string>
 
 </resources>

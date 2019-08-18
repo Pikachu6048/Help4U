@@ -326,7 +326,7 @@ public class MainActivity extends AppCompatActivity
     // Sign Out Function
     private void signOut() {
         mFirebaseAuth.signOut();
-        Toast.makeText(this, "Successfully Logout!",
+        Toast.makeText(this, getResources().getString( R.string.logout_successful),
                 Toast.LENGTH_SHORT).show();
     }
 

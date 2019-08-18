@@ -283,7 +283,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
 
         String User_Name = meditProfile_name.getText().toString();
         if (TextUtils.isEmpty(User_Name)) {
-            mtextInputLayout_EditName.setError("Required");
+            mtextInputLayout_EditName.setError(getResources().getString( R.string.required ));
             valid = false;
         } else {
             mtextInputLayout_EditName.setError(null);
@@ -291,10 +291,10 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
 
         String Phone_Number = meditProfile_phoneNumber.getText().toString();
         if (TextUtils.isEmpty(Phone_Number)) {
-            mtextInputLayout_EditPhoneNumber.setError("Required");
+            mtextInputLayout_EditPhoneNumber.setError(getResources().getString( R.string.required ));
             valid = false;
         } else if(!pattern.matcher(Phone_Number).matches()) {
-            mtextInputLayout_EditPhoneNumber.setError("Invalid Phone Number Format +60XXXXXXXXX");
+            mtextInputLayout_EditPhoneNumber.setError(getResources().getString( R.string.invalid_phone_format));
             valid = false;
         } else {
             mtextInputLayout_EditPhoneNumber.setError(null);
@@ -329,7 +329,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
     private  void uploadImage() {
         Toast.makeText(this, "At start Upload Image", Toast.LENGTH_SHORT).show();
         final ProgressDialog pd = new ProgressDialog(UserProfile.this);
-        pd.setMessage("Uploading");
+        pd.setMessage(getResources().getString( R.string.uploading));
         pd.show();
 
         Thread mThread = new Thread() {
@@ -363,7 +363,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
 
                                 pd.dismiss();
                             } else {
-                                Toast.makeText(UserProfile.this, "Could Not Update Image", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserProfile.this, getResources().getString( R.string.could_not_upload_image), Toast.LENGTH_SHORT).show();
                                 pd.dismiss();
                             }
                         }
@@ -375,7 +375,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
                         }
                     });
                 } else {
-                    Toast.makeText(UserProfile.this, "No image selected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserProfile.this, getResources().getString( R.string.no_image_selected), Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -393,7 +393,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
             mImageUri = data.getData();
 
             if (uploadTask != null && uploadTask.isInProgress()) {
-                Toast.makeText(this, "Upload in progress", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString( R.string.upload_in_progress), Toast.LENGTH_SHORT).show();
             } else {
                 uploadImage();
             }
@@ -437,7 +437,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.userImage:
                 openImage();
-                Toast.makeText(this, "Image is Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString( R.string.image_clicked), Toast.LENGTH_SHORT).show();
                 break;
         }
     }

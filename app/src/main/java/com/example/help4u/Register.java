@@ -108,9 +108,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                                 public void onComplete(@NonNull Task<Void> task) {
                                     // Successfully Sign Up
                                     if(task.isSuccessful()) {
-                                        Toast.makeText(Register.this, "Account has successfully been created!",
+                                        Toast.makeText(Register.this, getResources().getString( R.string.account_create_successful),
                                                 Toast.LENGTH_SHORT).show();
-                                        Toast.makeText(Register.this, "Login Successfully!",
+                                        Toast.makeText(Register.this, getResources().getString( R.string.login_successful ),
                                                 Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(Register.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -125,10 +125,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 //                            SignInAfterSignUp();
                         } else if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                             Toast.makeText(Register.this,
-                                    "This email has already been registered with Help4U!", Toast.LENGTH_SHORT).show();
+                                    getResources().getString( R.string.email_already_registered), Toast.LENGTH_SHORT).show();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(Register.this, "Account cannot be created!",
+                            Toast.makeText(Register.this, getResources().getString( R.string.account_cannot_create),
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -147,7 +147,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign Up success
-                            Toast.makeText(Register.this, "Login Successfully!",
+                            Toast.makeText(Register.this, getResources().getString( R.string.login_successful ),
                                     Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
@@ -162,10 +162,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         String email = mtext_input_username.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            mlabel_username.setError("Required");
+            mlabel_username.setError(getResources().getString( R.string.required ));
             valid = false;
         } else if(!pattern.matcher(email).matches()) {
-            mlabel_username.setError("Invalid Email Address Format");
+            mlabel_username.setError(getResources().getString( R.string.invalid_email_format ));
             valid = false;
         }
         else {
@@ -174,10 +174,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         String password = mtext_input_password.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            mlabel_password.setError("Required");
+            mlabel_password.setError(getResources().getString( R.string.required ));
             valid = false;
         } else if (mtext_input_password.length() < 6) {
-            mlabel_password.setError("Password must be more than 6 characters");
+            mlabel_password.setError(getResources().getString( R.string.password_format_error_message ));
             valid = false;
         }
         else {
@@ -186,13 +186,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         String confirmPassword = mtext_input_confirm_password.getText().toString();
         if (TextUtils.isEmpty(confirmPassword)) {
-            mlabel_confirm_password.setError("Required");
+            mlabel_confirm_password.setError(getResources().getString( R.string.required ));
             valid = false;
         } else if (!confirmPassword.equals(password)) {
-            mlabel_confirm_password.setError("Password does not match");
+            mlabel_confirm_password.setError(getResources().getString( R.string.password_not_match));
             valid = false;
         } else if (mtext_input_confirm_password.length() < 6) {
-            mlabel_confirm_password.setError("Password must be more than 6 characters");
+            mlabel_confirm_password.setError( getResources().getString(R.string.password_format_error_message));
             valid = false;
         }
 
