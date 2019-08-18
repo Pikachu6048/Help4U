@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#47525E"
         android:padding="15dp"
-        android:text="@string/cancel"
+        android:text="@string/quit"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_sign_up"

@@ -146,5 +146,6 @@
     <string name="career_test_question">Career Test Question</string>
     <string name="qualification">Qualification</string>
     <string name="job_detail">Job Details</string>
+    <string name="quit">quit</string>
 
 </resources>
