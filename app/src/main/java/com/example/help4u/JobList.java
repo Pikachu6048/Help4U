@@ -116,6 +116,9 @@ public class JobList extends AppCompatActivity  {
                 intent.putExtra( "salary", jobSalary[position] );
                 intent.putExtra( "comp_Address", compAddress[position] );
                 intent.putExtra( "compEmail", compEmail[position] );
+
+                // get position
+                intent.putExtra("position", String.valueOf(position));
                 startActivity( intent );
             }
         } );

@@ -290,7 +290,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, UserProfile.class);
             startActivity(intent);
         } else if (id == R.id.nav_wish_list) {
-
+            Intent intent = new Intent(this, JobWishlist.class);
+            startActivity(intent);
         } else if (id == R.id.nav_career_test) {
             Intent intent = new Intent(this, CareerTest.class);
             startActivity(intent);

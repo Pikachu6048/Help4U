@@ -3,20 +3,43 @@ package com.example.help4u;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class JobDetails extends AppCompatActivity {
     TextView jobName; //job name
@@ -26,6 +49,27 @@ public class JobDetails extends AppCompatActivity {
     ImageView compLogo;
     TextView compAddress;
     TextView compEmail;
+
+    // Declare Wish List Button
+    private Button mbtn_wishlist;
+
+    // Temporary variable to hold position in Job List
+    private String mStringposition;
+
+    // Get Drawables Value
+    private int mGetDrawable;
+
+    // Database Reference
+    private DatabaseReference reference;
+    private DatabaseReference reference2;
+
+    // Firebase instance variables
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseUser mFirebaseUser;
+
+    // Storage Reference
+    private StorageReference storageReference;
+    private StorageTask uploadTask;
 
     //member variables for set reminder function
     private Calendar mReminderDateTime; //to store user selected date and time
@@ -54,6 +98,9 @@ public class JobDetails extends AppCompatActivity {
         jobSalary.setText(intent.getStringExtra("salary"));
         compAddress.setText(intent.getStringExtra("comp_Address"));
 
+        // get mposition value from intent
+        mStringposition = (intent.getStringExtra("position"));
+
         compAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +122,25 @@ public class JobDetails extends AppCompatActivity {
         thisActivity = this;
         Button setReminder = findViewById( R.id.btn_reminder );
         setReminder.setOnClickListener( setReminderListener );
+
+        // Assign Wishlist button
+        mbtn_wishlist = findViewById(R.id.btn_wishlist);
+        mbtn_wishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AddToWishList();
+            }
+        });
+
+        // Start Auth Instance
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
+
+        // Storage Reference
+        storageReference = FirebaseStorage.getInstance().getReference("companylogo");
+
+        // Get image Drawable
+        mGetDrawable = intent.getIntExtra("comp_Logo",0);
     }
 
     private void LaunchEmail() {
@@ -163,4 +229,78 @@ public class JobDetails extends AppCompatActivity {
         startActivity( intent );
     }
 
+    // Convert Image into Mime
+    private String getFileExtension(Uri uri) {
+        ContentResolver contentResolver = getApplicationContext().getContentResolver();
+        MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
+        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
+    }
+
+    // Store Job Details to wish list using firebase database
+    private void AddToWishList() {
+        Toast.makeText(this, "Adding to Wishlist...",
+                Toast.LENGTH_SHORT).show();
+        reference = FirebaseDatabase.getInstance().getReference("jobwishlist").child(mFirebaseUser.getUid()).child(mStringposition);
+
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("position", mStringposition);
+        hashMap.put("photourl", "");
+        hashMap.put("jobtitle", jobSmallDesc.getText().toString().trim());
+        hashMap.put("jobdescription", jobFullDesc.getText().toString().trim());
+        reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                // Successfully Added to Wish List
+                if(task.isSuccessful()) {
+                    Toast.makeText(JobDetails.this, "Successfully added to your Wish List!",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        Intent intent = new Intent(JobDetails.this, JobList.class);
+        startActivity(intent);
+
+        // Get uri of drawable - Store image to database from drawables
+        Resources res = getResources();
+
+        Uri resUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + res.getResourcePackageName(mGetDrawable)
+                + '/' + res.getResourceTypeName(mGetDrawable)
+                + '/' + res.getResourceEntryName(mGetDrawable));
+
+        if (resUri != null){
+            final StorageReference fileReference = storageReference.child(System.currentTimeMillis()
+                    +"."+getFileExtension(resUri));
+
+            uploadTask = fileReference.putFile(resUri);
+            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+
+                    return fileReference.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        String mUri = downloadUri.toString();
+
+                        reference2 = FirebaseDatabase.getInstance().getReference("jobwishlist").child(mFirebaseUser.getUid()).child(mStringposition);
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("photourl", mUri);
+                        reference2.updateChildren(map);
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    // Display Failure Message
+                }
+            });
+        }
+    }
 }

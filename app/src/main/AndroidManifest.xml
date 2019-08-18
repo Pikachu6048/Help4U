@@ -19,11 +19,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".UserProfile"
-            android:theme="@style/AppTheme"
-            android:label="@string/user_profile"
+        <activity
+            android:name=".JobWishlist"
+            android:label="@string/job_wishlist"
             android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.help4u.MainActivity" />
+        </activity>
+        <activity
+            android:name=".UserProfile"
+            android:label="@string/user_profile"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.help4u.MainActivity" />
@@ -34,7 +42,7 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".AboutUs"
@@ -74,17 +82,15 @@
             android:parentActivityName=".CareerTest">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.help4u.CareerTest"/>
+                android:value="com.example.help4u.CareerTest" />
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="Welcome To Help4U" >
-        </activity>
+            android:label="Welcome To Help4U"></activity>
         <activity android:name=".TitleScreenActivity" />
         <activity
             android:name=".Register"
-            android:label="Welcome To Help4U" >
-        </activity>
+            android:label="Welcome To Help4U"></activity>
         <activity
             android:name=".JobList"
             android:label="@string/job_list"
