@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
@@ -32,17 +34,27 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     // Declare an instance of Firebase Auth
     private FirebaseAuth mFirebaseAuth;
 
-    // Declare Edit Text Field
-    private EditText mtext_input_username;
-    private EditText mtext_input_password;
-    private EditText mtext_input_confirm_password;
+    // Declare TextInputLayout Field
+    private TextInputLayout mlabel_username;
+    private TextInputLayout mlabel_password;
+    private TextInputLayout mlabel_confirm_password;
+
+    // Declare TextInputEditText Field
+    private TextInputEditText mtext_input_username;
+    private TextInputEditText mtext_input_password;
+    private TextInputEditText mtext_input_confirm_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_register );
 
-        // Assign Edit Text Fields
+        // Assign TextInputLayout Fields
+        mlabel_username = findViewById(R.id.label_username);
+        mlabel_password = findViewById(R.id.label_password);
+        mlabel_confirm_password = findViewById(R.id.label_confirm_password);
+
+        // Assign TextInputEditText Fields
         mtext_input_username = findViewById(R.id.text_input_username);
         mtext_input_password = findViewById(R.id.text_input_password);
         mtext_input_confirm_password = findViewById(R.id.text_input_confirm_password);
@@ -150,37 +162,37 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         String email = mtext_input_username.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            mtext_input_username.setError("Required");
+            mlabel_username.setError("Required");
             valid = false;
         } else if(!pattern.matcher(email).matches()) {
-            mtext_input_username.setError("Invalid Email Address Format");
+            mlabel_username.setError("Invalid Email Address Format");
             valid = false;
         }
         else {
-            mtext_input_username.setError(null);
+            mlabel_username.setError(null);
         }
 
         String password = mtext_input_password.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            mtext_input_password.setError("Required");
+            mlabel_password.setError("Required");
             valid = false;
         } else if (mtext_input_password.length() < 6) {
-            mtext_input_password.setError("Password must be more than 6 characters");
+            mlabel_password.setError("Password must be more than 6 characters");
             valid = false;
         }
         else {
-            mtext_input_password.setError(null);
+            mlabel_password.setError(null);
         }
 
         String confirmPassword = mtext_input_confirm_password.getText().toString();
         if (TextUtils.isEmpty(confirmPassword)) {
-            mtext_input_confirm_password.setError("Required");
+            mlabel_confirm_password.setError("Required");
             valid = false;
         } else if (!confirmPassword.equals(password)) {
-            mtext_input_confirm_password.setError("Password does not match");
+            mlabel_confirm_password.setError("Password does not match");
             valid = false;
         } else if (mtext_input_confirm_password.length() < 6) {
-            mtext_input_confirm_password.setError("Password must be more than 6 characters");
+            mlabel_confirm_password.setError("Password must be more than 6 characters");
             valid = false;
         }
 
