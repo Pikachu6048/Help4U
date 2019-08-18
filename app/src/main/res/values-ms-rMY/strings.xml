@@ -178,5 +178,6 @@
     <string name="your_email_address">Alamat E-mel anda</string>
     <string name="your_name">Nama anda</string>
     <string name="your_phone_number">Nombor telefon anda</string>
+    <string name="remove_from_wishlist_successful">Berhasil Alih Keluar dari Wishlist!</string>
 
 </resources>

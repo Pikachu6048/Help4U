@@ -186,5 +186,6 @@
     <string name="your_email_address">Your Email Address</string>
     <string name="your_name">Your Name</string>
     <string name="your_phone_number">Your Phone Number</string>
+    <string name="remove_from_wishlist_successful">Successfully Remove From Wishlist!</string>
 
 </resources>

@@ -180,4 +180,5 @@
     <string name="your_email_address">您的电邮地址</string>
     <string name="your_name">您的名字</string>
     <string name="your_phone_number">您的手机号码</string>
+    <string name="remove_from_wishlist_successful">成功从心愿单移除！</string>
 </resources>

@@ -196,15 +196,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        // Activity Test by wenz11
-        mActivityTest = findViewById(R.id.btnTest);
-        mActivityTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LaunchActivityTest();
-            }
-        });
-
         // Launch Log Out Activity on Main Screen
         mLogout = findViewById(R.id.log_out);
         mLogout.setOnClickListener(new View.OnClickListener() {

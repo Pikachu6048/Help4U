@@ -92,7 +92,7 @@ public class JobWishlist extends AppCompatActivity {
                                          int direction) {
                         int position = viewHolder.getAdapterPosition();
                         deleteItem(position);
-                        Toast.makeText(JobWishlist.this,"Successfully Remove From Wishlist!",
+                        Toast.makeText(JobWishlist.this, getResources().getString( R.string.remove_from_wishlist_successful),
                                 Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(JobWishlist.this, JobWishlist.class);
                         startActivity(intent);
