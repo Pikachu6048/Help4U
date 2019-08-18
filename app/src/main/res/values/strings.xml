@@ -182,10 +182,11 @@
     <string name="could_not_upload_image">Could Not Update Image</string>
     <string name="no_image_selected">No image selected</string>
     <string name="upload_in_progress">Upload in progress</string>
-    <string name="image_clicked">Image is Clicked</string>
+    <string name="image_clicked">Kindly choose a photo to change profile picture</string>
     <string name="your_email_address">Your Email Address</string>
     <string name="your_name">Your Name</string>
     <string name="your_phone_number">Your Phone Number</string>
     <string name="remove_from_wishlist_successful">Successfully Remove From Wishlist!</string>
+    <string name="updating_profile_picture">Updating profile picture</string>
 
 </resources>

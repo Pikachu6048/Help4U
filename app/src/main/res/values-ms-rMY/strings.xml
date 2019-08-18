@@ -168,7 +168,7 @@
     <string name="account_create_successful">Akaun telah berjaya dicipta!</string>
     <string name="could_not_upload_image">" 22/5000 Tidak Dapat Memperbaharui Imej"</string>
     <string name="email_already_registered">E-mel ini telah didaftarkan dengan Help4U!</string>
-    <string name="image_clicked">Imej diklik</string>
+    <string name="image_clicked">Sila pilih foto untuk menukar gambar profil</string>
     <string name="invalid_phone_format">Format Nombor Telefon Tidak Sah +60XXXXXXXXX</string>
     <string name="logout_successful">Log keluar kejayaan</string>
     <string name="no_image_selected">Tiada imej dipilih</string>
@@ -179,5 +179,6 @@
     <string name="your_name">Nama anda</string>
     <string name="your_phone_number">Nombor telefon anda</string>
     <string name="remove_from_wishlist_successful">Berhasil Alih Keluar dari Wishlist!</string>
+    <string name="updating_profile_picture">Mengemas kini gambar profil</string>
 
 </resources>

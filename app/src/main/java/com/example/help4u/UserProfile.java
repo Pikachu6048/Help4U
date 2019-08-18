@@ -327,7 +327,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
     }
 
     private  void uploadImage() {
-        Toast.makeText(this, "At start Upload Image", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.updating_profile_picture), Toast.LENGTH_SHORT).show();
         final ProgressDialog pd = new ProgressDialog(UserProfile.this);
         pd.setMessage(getResources().getString( R.string.uploading));
         pd.show();
@@ -385,8 +385,6 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        Toast.makeText(this, "At start activity result", Toast.LENGTH_SHORT).show();
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
         && data != null && data.getData() != null) {

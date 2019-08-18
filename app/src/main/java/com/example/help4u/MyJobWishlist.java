@@ -44,7 +44,7 @@ public class MyJobWishlist extends RecyclerView.Adapter<MyJobWishlist.MyAllJobWi
     public void onBindViewHolder(@NonNull MyAllJobWishLists holder, int position) {
         holder.mgetjobtitle.setText(jobwishlist.get(position).getJobtitle());
         holder.mgetjobdescription.setText(jobwishlist.get(position).getJobdescription());
-        holder.mgetposition.setText(jobwishlist.get(position).getPosition());
+        holder.mgetposition.setText("");
         Picasso.get().load(jobwishlist.get(position).getPhotourl()).into(holder.mgetphotourl);
     }
 
