@@ -1,11 +1,13 @@
 package com.example.help4u;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,15 +25,13 @@ public class MyJobWishlist extends RecyclerView.Adapter<MyJobWishlist.MyAllJobWi
 
     Context context;
     ArrayList<WishList> jobwishlist;
-
-    // To delete item from database
-    ArrayList<WishList> jwl;
     ArrayList<String> keys;
 
-    public MyJobWishlist(Context c, ArrayList<WishList> wl)
+    public MyJobWishlist(Context c, ArrayList<WishList> wl, ArrayList<String> k)
     {
         context = c;
         jobwishlist = wl;
+        keys = k;
     }
 
     @NonNull
@@ -45,7 +45,7 @@ public class MyJobWishlist extends RecyclerView.Adapter<MyJobWishlist.MyAllJobWi
         holder.mgetjobtitle.setText(jobwishlist.get(position).getJobtitle());
         holder.mgetjobdescription.setText(jobwishlist.get(position).getJobdescription());
         holder.mgetposition.setText(jobwishlist.get(position).getPosition());
-        Picasso.get().load(jobwishlist.get(position).getPhotourl()).into(holder.mgetphotourl);;
+        Picasso.get().load(jobwishlist.get(position).getPhotourl()).into(holder.mgetphotourl);
     }
 
     @Override

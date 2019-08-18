@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class JobWishlist extends AppCompatActivity {
 
@@ -36,6 +38,9 @@ public class JobWishlist extends AppCompatActivity {
     // Firebase instance variables
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
+
+    // Keys
+    ArrayList<String> keys = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +63,9 @@ public class JobWishlist extends AppCompatActivity {
                 {
                     WishList wl = dataSnapshot1.getValue(WishList.class);
                     jobwishlist.add(wl);
+                    keys.add(dataSnapshot1.getKey());
                 }
-                adapter = new MyJobWishlist(JobWishlist.this, jobwishlist);
+                adapter = new MyJobWishlist(JobWishlist.this, jobwishlist, keys);
                 recyclerView.setAdapter(adapter);
             }
 
@@ -84,14 +90,22 @@ public class JobWishlist extends AppCompatActivity {
                     @Override
                     public void onSwiped(RecyclerView.ViewHolder viewHolder,
                                          int direction) {
-//                    int position = viewHolder.getAdapterPosition();
-
-                        // Delete the word
-                        Toast.makeText(JobWishlist.this,"Deleting...",
+                        int position = viewHolder.getAdapterPosition();
+                        deleteItem(position);
+                        Toast.makeText(JobWishlist.this,"Successfully Remove From Wishlist!",
                                 Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(JobWishlist.this, JobWishlist.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
 
         helper.attachToRecyclerView(recyclerView);
+    }
+
+    public void deleteItem(int position) {
+        String key = keys.get(position);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("jobwishlist").child(mFirebaseUser.getUid());
+        ref.child(key).removeValue();
     }
 }
