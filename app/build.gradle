@@ -55,6 +55,9 @@ dependencies {
     // Add Firebase Storage
     implementation 'com.google.firebase:firebase-storage:18.1.1'
 
+    // Add Picasso for loading image into the image view
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

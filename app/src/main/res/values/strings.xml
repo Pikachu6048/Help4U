@@ -149,5 +149,8 @@
     <string name="quit">quit</string>
     <string name="job_wishlist">Job Wishlist</string>
     <string name="add_to_wishlist">Add to Wishlist</string>
+    <string name="position">Position</string>
+    <string name="job_title">Job title</string>
+    <string name="company_logo">company logo</string>
 
 </resources>

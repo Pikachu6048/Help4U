@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">-->
+
+<!--        <TextView
+            android:id="@+id/getjobtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_view_style"
+            tools:text="placeholder text" />
+
+        <TextView
+            android:id="@+id/getjobdescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_view_style"
+            tools:text="placeholder text" />
+
+        <TextView
+            android:id="@+id/getposition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_view_style"
+            tools:text="placeholder text" />
+
+    </LinearLayout>-->
+    
+<!--    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/getphotourl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        app:cardCornerRadius="10dp"
+        app:contentPaddingBottom="15dp"
+        app:contentPaddingLeft="15dp"
+        app:contentPaddingRight="15dp"
+        app:contentPaddingTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="322dp"
+            android:layout_height="168dp">
+
+<!--            For Circular Image
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="3dp"-->
+
+            <ImageView
+                android:id="@+id/getphotourl"
+                android:contentDescription="@string/company_logo"
+                android:layout_width="76dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="57dp"
+                android:elevation="1dp"
+                tools:src="@drawable/pikademo"
+                app:layout_constraintBottom_toTopOf="@+id/getposition"
+                app:layout_constraintEnd_toStartOf="@+id/getjobdescription"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/getjobtitle"
+                android:layout_width="215dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="11dp"
+                tools:text="@string/job_title"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/getjobdescription"
+                app:layout_constraintEnd_toEndOf="@+id/getjobdescription"
+                app:layout_constraintStart_toStartOf="@+id/getjobdescription"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/getjobdescription"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="11dp"
+                tools:text="@string/job_description"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/getposition"
+                app:layout_constraintTop_toBottomOf="@+id/getjobtitle" />
+
+            <TextView
+                android:id="@+id/getposition"
+                android:layout_width="75dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="4dp"
+                tools:text="@string/position"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/getjobdescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/getphotourl" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
