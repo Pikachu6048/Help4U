@@ -74,7 +74,6 @@
     <string name="enter_your_name">Masukkan nama anda</string>
     <string name="enter_your_phone_number">Masukkan nombor telefon anda</string>
     <string name="job_wishlist">Senarai pekerjaan</string>
-    <string name="log_out">Log Keluar</string>
     <string name="menu_settings">Menetapkan</string>
     <string name="name">Nama</string>
     <string name="phone_number">nombor telefon</string>
@@ -136,7 +135,6 @@
     <string name="invalid_email_format">Format Alamat E-mel Tidak Sah</string>
     <string name="invalid_login_credentials">Kredensial Log masuk tidak sah!</string>
     <string name="job_interview">Temuduga kerja</string>
-    <string name="job_title">job_title</string>
     <string name="login_successful">Log masuk berjaya</string>
     <string name="menu_share">Bahagian</string>
     <string name="password_format_error_message">Kata laluan mesti melebihi 6 aksara</string>
@@ -177,5 +175,8 @@
     <string name="password_not_match">Kata laluan tidak sepadan</string>
     <string name="upload_in_progress">Muat naik sedang berjalan</string>
     <string name="uploading">Memuat naik</string>
+    <string name="your_email_address">Alamat E-mel anda</string>
+    <string name="your_name">Nama anda</string>
+    <string name="your_phone_number">Nombor telefon anda</string>
 
 </resources>

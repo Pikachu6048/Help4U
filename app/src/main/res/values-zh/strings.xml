@@ -73,7 +73,7 @@
     <string name="invalid_login_credentials">登录资料错误！</string>
     <string name="quit_dialog">退出</string>
     <string name="confirm_quit_dialog">确定退出</string>
-    <string name="required">必要</string>
+    <string name="required">必填</string>
     <string name="invalid_email_format">电邮地址格式错误</string>
     <string name="password_format_error_message">密码需超过6个字元</string>
 
@@ -176,7 +176,8 @@
     <string name="password_not_match">密码不正确</string>
     <string name="upload_in_progress">正在上传</string>
     <string name="uploading">上传中</string>
-    <string name="job_title">工作标题</string>
-    <string name="job_wishlist">心愿单</string>
-    <string name="log_out">登出</string>
+    <string name="job_wishlist">工作心愿单</string>
+    <string name="your_email_address">您的电邮地址</string>
+    <string name="your_name">您的名字</string>
+    <string name="your_phone_number">您的手机号码</string>
 </resources>

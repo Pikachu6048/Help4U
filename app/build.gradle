@@ -19,6 +19,15 @@ android {
 }
 
 dependencies {
+    // Add Picasso for loading image into the image view
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Add Support for Circular Image View
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    // Add Image loading and caching library for smooth scrolling
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
     // Add Firebase SDK (App-level build.gradle) by wenz11
     implementation 'com.google.firebase:firebase-core:17.0.1'
 

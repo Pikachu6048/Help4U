@@ -86,11 +86,11 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="Welcome To Help4U"></activity>
+            android:label="@string/welcome_msg" />
         <activity android:name=".TitleScreenActivity" />
         <activity
             android:name=".Register"
-            android:label="Welcome To Help4U"></activity>
+            android:label="@string/welcome_msg" />
         <activity
             android:name=".JobList"
             android:label="@string/job_list"

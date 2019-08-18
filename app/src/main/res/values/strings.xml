@@ -21,7 +21,6 @@
     <string name="menu_about_us">About Us</string>
     <string name="career_test">Career Test</string>
     <string name="job_list">Job List</string>
-    <string name="log_out">Logout</string>
 
     <!--by YeuHarn -->
     <string name="username">Username</string>
@@ -171,7 +170,7 @@
     <string name="invalid_email_format">Invalid Email Address Format</string>
     <string name="password_format_error_message">Password must be more than 6 characters</string>
     <string name="position">Position</string>
-    <string name="job_title">Job title</string>
+    <string name="job_title" translatable="false">Job title</string>
     <string name="company_logo" translatable="false">company logo</string>
     <string name="logout_successful">Successfully Logout!</string>
     <string name="account_create_successful">Account has successfully been created!</string>
@@ -184,5 +183,8 @@
     <string name="no_image_selected">No image selected</string>
     <string name="upload_in_progress">Upload in progress</string>
     <string name="image_clicked">Image is Clicked</string>
+    <string name="your_email_address">Your Email Address</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_phone_number">Your Phone Number</string>
 
 </resources>
