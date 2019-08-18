@@ -146,7 +146,7 @@ public class JobDetails extends AppCompatActivity {
     private void LaunchEmail() {
 
 
-        //   emailIntent.setPackage("com.google.android.apps.email");
+    
 
         String recipient[] = {compEmail.getText().toString()};
 
