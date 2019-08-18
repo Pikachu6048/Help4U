@@ -66,6 +66,16 @@
     <string name="career_test_question">职业测试问题</string>
     <string name="job_detail">工作详情</string>
     <string name="qualification">学历</string>
+    <string name="job_interview">工作面试</string>
+    <string name="adding_to_wishlist_toast">正在加入心愿单。。。</string>
+    <string name="add_to_wishlist_successful">成功加入心愿单！</string>
+    <string name="login_successful">登录成功！</string>
+    <string name="invalid_login_credentials">登录资料错误！</string>
+    <string name="quit_dialog">退出</string>
+    <string name="confirm_quit_dialog">确定退出</string>
+    <string name="required">必要</string>
+    <string name="invalid_email_format">电邮地址格式错误</string>
+    <string name="password_format_error_message">密码需超过6个字元</string>
 
     <string-array name="job_title">
         <item>程序员，软件经理</item>
@@ -100,6 +110,17 @@
         <item>数据科学家</item>
     </string-array>
 
+    <string-array name="job_list_data">
+        <item>会计师</item>
+        <item>会计师</item>
+        <item>程序员</item>
+        <item>软件经理</item>
+        <item>数据科学家</item>
+        <item>程序员</item>
+        <item>数据科学家</item>
+        <item>软件经理</item>
+    </string-array>
+
     <!-- career test questions -->
     <string-array name="questions">
         <item>学习如何投资</item>
@@ -126,4 +147,22 @@
         <item>学习电脑软件程序</item>
         <item>编写应用程序或网站</item>
     </string-array>
+
+    <string name="add_to_wishlist">加入心愿单</string>
+    <string name="career_test">职业测试</string>
+    <string name="edit_profile">编辑个人档案</string>
+    <string name="email">电邮</string>
+    <string name="enter_your_favorite_quote">输入您的名言</string>
+    <string name="enter_your_name">输入名字</string>
+    <string name="enter_your_phone_number">输入手机号码</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_share">分享</string>
+    <string name="name">名字</string>
+    <string name="phone_number">手机号码</string>
+    <string name="position">位置</string>
+    <string name="quit">退出</string>
+    <string name="quote">名言</string>
+    <string name="save_profile">更新个人档案</string>
+    <string name="user_profile">用户个人档案</string>
+    <string name="user_profile_background">用户个人档案背景</string>
 </resources>

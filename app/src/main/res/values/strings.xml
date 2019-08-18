@@ -8,8 +8,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
@@ -58,6 +58,17 @@
         <item>Data scientist</item>
         <item>Accountant</item>
         <item>Entrepreneur</item>
+    </string-array>
+
+    <string-array name="job_list_data">
+        <item>Accountant</item>
+        <item>Accountant</item>
+        <item>Programmer</item>
+        <item>Software Manager</item>
+        <item>Data Scientist</item>
+        <item>Programmer</item>
+        <item>Data Scientist</item>
+        <item>Software Manager</item>
     </string-array>
 
     <string-array name="job_desc">
@@ -149,8 +160,18 @@
     <string name="quit">quit</string>
     <string name="job_wishlist">Job Wishlist</string>
     <string name="add_to_wishlist">Add to Wishlist</string>
+    <string name="job_interview">Job Interview</string>
+    <string name="adding_to_wishlist_toast">Adding to Wishlist...</string>
+    <string name="add_to_wishlist_successful">Successfully added to your Wish List!</string>
+    <string name="login_successful">Login Successfully!</string>
+    <string name="invalid_login_credentials">Invalid Login Credentials!</string>
+    <string name="quit_dialog">Quit</string>
+    <string name="confirm_quit_dialog">Confirm Quit</string>
+    <string name="required">Required</string>
+    <string name="invalid_email_format">Invalid Email Address Format</string>
+    <string name="password_format_error_message">Password must be more than 6 characters</string>
     <string name="position">Position</string>
     <string name="job_title">Job title</string>
-    <string name="company_logo">company logo</string>
+    <string name="company_logo" translatable="false">company logo</string>
 
 </resources>

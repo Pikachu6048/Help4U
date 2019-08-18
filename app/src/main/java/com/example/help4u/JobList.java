@@ -2,6 +2,7 @@ package com.example.help4u;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -21,14 +22,11 @@ public class JobList extends AppCompatActivity  {
 
     private ListView jobListView;
     private Spinner job_category_list;
+    private CustomAdapter customAdapter;
 
 
 
-
-    String[] jobName = {"Accountant", "Accountant",
-                        "Programmer", "Software Manager",
-                        "Data Scientist", "Programmer",
-                        "Data Scientist", "Software Manager"};
+    String[] jobName;
 
     String[] jobDesc = {"Ambition Group Malaysia Sdn Bhd", "Vitality Boost Sdn Bhd",
                         "MULTI EPSILON SOLUTIONS SDN BHD", "SEEK ASIA",
@@ -78,6 +76,7 @@ public class JobList extends AppCompatActivity  {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_job_list );
 
+        jobName = getResources().getStringArray( R.array.job_list_data );
         jobListView = findViewById( R.id.job_list_view );
         job_category_list = findViewById( R.id.job_category_list );
 
@@ -91,7 +90,8 @@ public class JobList extends AppCompatActivity  {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 //set a new adapter for listView
-                jobListView.setAdapter( new CustomAdapter( job_category_list.getSelectedItem().toString() ) );
+                customAdapter = new CustomAdapter( job_category_list.getSelectedItem().toString() );
+                jobListView.setAdapter( customAdapter );
             }
 
             @Override
@@ -101,24 +101,28 @@ public class JobList extends AppCompatActivity  {
         } );
 
         //setup list view adapter with job category spinner selected value, initially will be "Default"
-        CustomAdapter customAdapter = new CustomAdapter(job_category_list.getSelectedItem().toString());
+        customAdapter = new CustomAdapter(job_category_list.getSelectedItem().toString());
         jobListView.setAdapter( customAdapter );
 
         //transfer info of selected job in the list view to job detail activity
         jobListView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Intent intent = new Intent( getApplicationContext(), JobDetails.class );
-                intent.putExtra( "jobName", jobName[position] );
-                intent.putExtra( "jobDesc", jobDesc[position] );
-                intent.putExtra( "jobFullDesc", jobFullDesc[position] );
-                intent.putExtra( "comp_Logo", compLogo[position] );
-                intent.putExtra( "salary", jobSalary[position] );
-                intent.putExtra( "comp_Address", compAddress[position] );
-                intent.putExtra( "compEmail", compEmail[position] );
+
+                int dataIndex = customAdapter.getJobListDataIndex().get( position );
+
+                intent.putExtra( "jobName", jobName[dataIndex] );
+                intent.putExtra( "jobDesc", jobDesc[dataIndex] );
+                intent.putExtra( "jobFullDesc", jobFullDesc[dataIndex] );
+                intent.putExtra( "comp_Logo", compLogo[dataIndex] );
+                intent.putExtra( "salary", jobSalary[dataIndex] );
+                intent.putExtra( "comp_Address", compAddress[dataIndex] );
+                intent.putExtra( "compEmail", compEmail[dataIndex] );
 
                 // get position
-                intent.putExtra("position", String.valueOf(position));
+                intent.putExtra("position", String.valueOf(dataIndex));
                 startActivity( intent );
             }
         } );
@@ -126,45 +130,40 @@ public class JobList extends AppCompatActivity  {
 
     //a custom adapter class for setting the content of job_list_view element
     private class CustomAdapter extends BaseAdapter {
-
-        private ArrayList<String> jobNameDisplay; //display list for job name
-        private ArrayList<String> jobDescDisplay; //display list for company name
-        private ArrayList<Integer> companyLogoDisplay; //display list for company logo
+        //list of corresponding data index
+        //this will serve as a lookup table to map list view selected item to the actual data array
+        private ArrayList<Integer> jobListDataIndex;
 
         //parameter (jobNameSelected) allow the list view to display jobs with specific job name only
         private CustomAdapter(String jobNameSelected){
+            jobListDataIndex = new ArrayList<>();
+
             //if job category spinner is not "Default"
             if(!jobNameSelected.equals( getResources().getStringArray( R.array.Joblist )[0] )){
-                //initialize empty list
-                jobNameDisplay = new ArrayList<>();
-                jobDescDisplay = new ArrayList<>();
-                companyLogoDisplay = new ArrayList<>();
 
-                //search through job name array, if equals to spinner selected value, add into display list
+                //search through job name array, if equals to spinner selected value, add into index list
                 for(int i = 0; i < jobName.length; i++){
                     if(jobName[i].equals( jobNameSelected )){
-                        jobNameDisplay.add( jobName[i] );
-                        jobDescDisplay.add( jobDesc[i] );
-                        companyLogoDisplay.add( compLogo[i] );
+                        jobListDataIndex.add( i ); //add the equivalence index number in data array into the list
                     }
                 }
             }
             //else job category spinner is "Default"
             else{
                 //add all element into display list
-                jobNameDisplay = new ArrayList<>( Arrays.asList(jobName) );
-                jobDescDisplay = new ArrayList<>( Arrays.asList( jobDesc ) );
-                companyLogoDisplay = new ArrayList<>();
-
-                for (int logo : compLogo) {
-                    companyLogoDisplay.add( logo );
+                for (int i = 0; i < jobName.length; i++) {
+                    jobListDataIndex.add( i );
                 }
             }
         }
 
+        ArrayList<Integer> getJobListDataIndex() {
+            return jobListDataIndex;
+        }
+
         @Override
         public int getCount() {
-            return jobNameDisplay.size();
+            return jobListDataIndex.size();
         }
 
         @Override
@@ -186,10 +185,11 @@ public class JobList extends AppCompatActivity  {
             TextView name2 = view1.findViewById( R.id.jobSmallDescription );
             ImageView image = view1.findViewById( R.id.compLogo );
 
+            int dataIndex = jobListDataIndex.get( position );
             //set text for current list view element
-            name.setText( jobNameDisplay.get( position ) );
-            name2.setText( jobDescDisplay.get( position ) );
-            image.setImageResource( companyLogoDisplay.get( position ) );
+            name.setText( jobName[dataIndex] );
+            name2.setText( jobDesc[dataIndex] );
+            image.setImageResource( compLogo[dataIndex] );
 
             return view1;
         }

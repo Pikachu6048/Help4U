@@ -77,13 +77,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success
-                                    Toast.makeText(LoginActivity.this, "Login Successfully!",
+                                    Toast.makeText(LoginActivity.this, getResources().getString( R.string.login_successful),
                                             Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     finish();
                                 } else {
                                     // If sign in fails, display error message to the user
-                                    Toast.makeText(LoginActivity.this, "Invalid Login Credentials!",
+                                    Toast.makeText(LoginActivity.this, getResources().getString( R.string.invalid_login_credentials),
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -99,8 +99,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 // means Exit the App
                 // Confirm to quit App
                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                builder.setTitle("Quit " + this.getResources().getString(R.string.app_name));
-                builder.setMessage("Confirm Quit " + this.getResources().getString(R.string.app_name) + "?")
+                builder.setTitle(getResources().getString( R.string.quit_dialog ) + this.getResources().getString(R.string.app_name));
+                builder.setMessage(getResources().getString( R.string.confirm_quit_dialog ) + this.getResources().getString(R.string.app_name) + "?")
                         .setCancelable(false)
                         .setPositiveButton( R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
@@ -130,10 +130,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         String email = mUsername_login_input.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            mtextInputLayout_Username.setError("Required");
+            mtextInputLayout_Username.setError(getResources().getString( R.string.required));
             valid = false;
         } else if(!pattern.matcher(email).matches()) {
-            mtextInputLayout_Username.setError("Invalid Email Address Format");
+            mtextInputLayout_Username.setError(getResources().getString( R.string.invalid_email_format ));
             valid = false;
         } else {
             mtextInputLayout_Username.setError(null);
@@ -141,10 +141,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         String password = mPassword_login_input.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            mtextInputLayout2_Password.setError("Required");
+            mtextInputLayout2_Password.setError(getResources().getString( R.string.required));
             valid = false;
         } else if (mPassword_login_input.length() < 6) {
-            mtextInputLayout2_Password.setError("Password must be more than 6 characters");
+            mtextInputLayout2_Password.setError(getResources().getString( R.string.password_format_error_message));
             valid = false;
         }
         else {

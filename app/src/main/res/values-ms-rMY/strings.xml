@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Help4U</string>
     <string name="IT_label">Maklumat</string>
     <string name="about_us_full">Ini adalah aplikasi mudah alih yang dibangunkan oleh Ang Zuan Wen, Lim Yeu Harn dan Chong Jia Yi. Tujuan pembangunan adalah menyelesaikan salah satu masalah negara (pengangguran). Tujuan aplikasi ini adalah untuk membantu pengguna mencari persekitaran kerja dan kerjaya yang tepat.</string>
     <string name="action_settings">Tetapan</string>
@@ -67,4 +66,5 @@
     <string name="very_interested">Sangat berminat</string>
     <string name="welcome_msg">Selamat Datang Ke Help4U</string>
     <string name="yes">Yes</string>
+    <string name="career_test">Ujian Kerjaya</string>
 </resources>

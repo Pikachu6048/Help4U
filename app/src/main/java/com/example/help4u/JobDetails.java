@@ -217,7 +217,7 @@ public class JobDetails extends AppCompatActivity {
         intent.setType( "vnd.android.cursor.item/event" );
 
         //set event title, location(address) and description(company name)
-        intent.putExtra( CalendarContract.Events.TITLE, "Job Interview - " + jobName.getText() );
+        intent.putExtra( CalendarContract.Events.TITLE, getResources().getString( R.string.job_interview) + " - " + jobName.getText() );
         intent.putExtra( CalendarContract.Events.EVENT_LOCATION, compAddress.getText() );
         intent.putExtra( CalendarContract.Events.DESCRIPTION, jobSmallDesc.getText() );
 
@@ -238,7 +238,7 @@ public class JobDetails extends AppCompatActivity {
 
     // Store Job Details to wish list using firebase database
     private void AddToWishList() {
-        Toast.makeText(this, "Adding to Wishlist...",
+        Toast.makeText(this, getResources().getString( R.string.adding_to_wishlist_toast),
                 Toast.LENGTH_SHORT).show();
         reference = FirebaseDatabase.getInstance().getReference("jobwishlist").child(mFirebaseUser.getUid()).child(mStringposition);
 
@@ -252,7 +252,7 @@ public class JobDetails extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 // Successfully Added to Wish List
                 if(task.isSuccessful()) {
-                    Toast.makeText(JobDetails.this, "Successfully added to your Wish List!",
+                    Toast.makeText(JobDetails.this, getResources().getString( R.string.add_to_wishlist_successful),
                             Toast.LENGTH_SHORT).show();
                 }
             }
