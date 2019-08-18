@@ -66,5 +66,105 @@
     <string name="very_interested">Sangat berminat</string>
     <string name="welcome_msg">Selamat Datang Ke Help4U</string>
     <string name="yes">Yes</string>
+
+
+    <string name="add_to_wishlist">Tambah wishlist</string>
+    <string name="edit_profile">Sunting profil</string>
+    <string name="enter_your_favorite_quote">Masukkan petikan kegemaran anda</string>
+    <string name="enter_your_name">Masukkan nama anda</string>
+    <string name="enter_your_phone_number">Masukkan nombor telefon anda</string>
+    <string name="job_wishlist">Senarai pekerjaan</string>
+    <string name="log_out">Log Keluar</string>
+    <string name="menu_settings">Menetapkan</string>
+    <string name="name">Nama</string>
+    <string name="phone_number">nombor telefon</string>
+    <string name="quit">Keluar</string>
+    <string name="quote">Petikan</string>
+    <string name="save_profile">Save profil</string>
+    <string name="user_profile">Informasi pengguna</string>
+    <string name="user_profile_background">Latar belakang pengguna</string>
+
+
+
+
+    <string-array name = "questions">
+                 <item> Ketahui cara melabur </item>
+                 <item> Tulis pelan perniagaan </item>
+                 <item> Statistik Pembelajaran dan Perakaunan </item>
+                 <item> perdagangan pembelajaran </item>
+                 <item> menyelesaikan masalah matematik </item>
+
+                 <item> Menggunakan Matematik, Sains dan Teknologi </item>
+                 <item> kerap bekerja dengan nombor </item>
+                 <item> Membantu operasi perniagaan </item>
+                 <item> mempromosikan atau mempromosikan produk baharu </item>
+                 <item> Produk yang direka bentuk dan inovatif yang lebih baik </item>
+
+                 <item> bermula </item>
+                 <item> Beri inspirasi kepada orang lain untuk mencapai matlamat </item>
+                 <item> belajar sistem sedia ada </item>
+                 <item> Menyelesaikan masalah teknikal </item>
+                 <item> menyimpan teknologi terkini</item>
+
+                 <item> Merekabentuk Seni dengan Perisian Komputer </item>
+                 <item> Reka Bentuk Laman Web Reka Bentuk </item>
+                 <item> menilai produk dan mereka bentuk semula </item>
+                 <item> pembelajaran perisian komputer </item>
+                 <item> Tulis aplikasi atau laman web </item>
+             </string-array>
+
+
+    <string-array name = "job_desc">
+                <item>
+            Programmer menulis kod untuk aplikasi perisian. Selepas pemaju perisian telah merancang pelan tindakan untuk program ini, programmer menulis kod mengikut reka bentuk. \ n
+            Pengurus perisian bertanggungjawab untuk memantau dan menggerakkan orang dan sumber untuk membangunkan perisian baru atau menaik taraf perisian sedia ada.
+        </item>
+                <item>
+            Para saintis data bertanggungjawab untuk menganalisis dan mengekstrak nilai dari data. Profesion ini memerlukan orang untuk mendapatkan maklumat secara aktif dari pelbagai sumber dan analisa menjalankan untuk lebih memahami prestasi perniagaan.
+            Dan bina alat AI untuk membantu mengotomatisasi proses tertentu dalam syarikat.
+        </item>
+                <item>
+            Akauntan merujuk kepada akauntan yang mempunyai perakaunan profesional tertentu, yang telah memperoleh sijil selepas peperiksaan, dapat menerima kepercayaan klien, dan menjalankan perniagaan yang berkaitan dengan pengauditan, perakaunan, perundingan, cukai, dll.
+        </item>
+                <item>
+            Seorang usahawan adalah seseorang yang mencipta dan menjalankan perniagaan. Usahawan akan memikul tanggungjawab keseluruhan perusahaan, memikirkan kepentingan jangka panjang syarikat, dan tidak mudah bersara atau menukar pekerjaan.
+            Orang-orang dari semua peringkat umur boleh menjadi usahawan. Mereka dicirikan oleh kreativiti, imaginasi dan semangat untuk bekerja.
+        </item>
+            </string-array>
+    <string name="confirm_quit_dialog">sahkan keluar</string>
+    <string name="email">emel</string>
+    <string name="invalid_email_format">Format Alamat E-mel Tidak Sah</string>
+    <string name="invalid_login_credentials">Kredensial Log masuk tidak sah!</string>
+    <string name="job_interview">Temuduga kerja</string>
+    <string name="job_title">job_title</string>
+    <string name="login_successful">Log masuk berjaya</string>
+    <string name="menu_share">Bahagian</string>
+    <string name="password_format_error_message">Kata laluan mesti melebihi 6 aksara</string>
+    <string name="position">Jawatan</string>
+    <string name="quit_dialog">Keluar</string>
+    <string name="required">Diperlukan</string>
+    <string name="add_to_wishlist_successful">Berjaya ditambah ke Wish List anda!</string>
+    <string name="adding_to_wishlist_toast">Menambah ke Senarai Pilihan ...</string>
     <string name="career_test">Ujian Kerjaya</string>
+
+
+    <string-array name="job_list_data">
+        <item>Akauntan</item>
+        <item>Akauntan</item>
+        <item>Programmer</item>
+        <item>Pengurus Perisian</item>
+        <item>Scientist Data</item>
+        <item>Programmer</item>
+        <item>Scientist Data</item>
+        <item>Pengurus Perisian</item>
+    </string-array>
+
+    <string-array name = "Joblist">
+                 <item>Lalai</item>
+                 <item>Programmer</item>
+                 <item>Pengurus Perisian</item>
+                 <item>Akauntan</item>
+                 <item>Scientist Data</item>
+    </string-array>
+
 </resources>
