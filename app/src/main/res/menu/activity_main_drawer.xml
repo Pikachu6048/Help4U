@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/menu_top" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
@@ -28,8 +28,21 @@
             android:title="@string/menu_jobList" />
     </group>
 
-    <item android:title="">
-        <menu>
+    <!--<item android:title="">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_setting"-->
+                <!--android:icon="@drawable/ic_settings_applications_black_24dp"-->
+                <!--android:title="@string/action_settings" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_about_us"-->
+                <!--android:icon="@drawable/ic_about_us_24dp"-->
+                <!--android:title="@string/menu_about_us" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+    <group android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_setting"
                 android:icon="@drawable/ic_settings_applications_black_24dp"
@@ -38,7 +51,8 @@
                 android:id="@+id/nav_about_us"
                 android:icon="@drawable/ic_about_us_24dp"
                 android:title="@string/menu_about_us" />
-        </menu>
-    </item>
+    </group>
+
+
 
 </menu>
